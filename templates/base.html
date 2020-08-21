@@ -52,6 +52,9 @@
         </form>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+          <li><a href="{{ url_for('auth.register') }}">Register</a>
+          <li><a href="{{ url_for('auth.login') }}">Log In</a>
+
         </ul>
       </div>
     </div>
@@ -65,3 +68,7 @@
   {% endfor %}
   {% block content %}{% endblock %}
 </section>
+<footer class="container-fluid text-center">
+  <p>การตรวจมะเร็งพันธุกรรมเกี่ยวกับมะเร็งเต้านมและรังไข่</p>
+  <p>โรงพยาบาลมะเร็งอุดรธานี</p>
+</footer>
