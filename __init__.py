@@ -1,5 +1,6 @@
 import os
-from  flask import Flask
+from  flask import Flask 
+
 
 def create_app(test_config=None):
     # create and configure the app
@@ -22,7 +23,14 @@ def create_app(test_config=None):
     except OSError:
         pass
 
+    
     @app.route('/hello')
     def hello():
         return 'Hello, World!'
+
+    from chat import db
+    from chat import auth 
+    app.register_blueprint(auth.bp) 
+    
+    
     return app
