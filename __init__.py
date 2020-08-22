@@ -29,8 +29,9 @@ def create_app(test_config=None):
         return 'Hello, World!'
 
     from chat import db
-    from chat import auth 
+    from chat import auth ,inform
     app.register_blueprint(auth.bp) 
-    
+    app.register_blueprint(inform.bp)
+    app.add_url_rule('/',endpoint='index')
     
     return app

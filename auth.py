@@ -9,6 +9,26 @@ from chat.db import get_db
 
 bp =Blueprint('auth',__name__,url_prefix='/auth')
 
+def login_required(view):
+    @functools.wraps(view)
+    def wrapped_view(**kwargs):
+        if g.user is None:
+            return redirect(url_for("auth.login"))
+        return view(**kwargs)
+    return wrapped_view
+
+@bp.before_request
+def load_logged_in_user():
+    user_id = session.get("user_id")
+
+    if user_id is None:
+        g.user = None
+    else:
+        dbConn = get_db()
+        cur = dbConn.cursor()
+        cur.execute("SELECT * FROM a_user WHERE id = %s", (user_id,))
+        g.user = cur.fetchone()
+
 @bp.route('/register',methods=('GET','POST'))
 def register():
     if request.method=='POST':
@@ -21,43 +41,29 @@ def register():
         cur =dbConn.cursor()
 
         error =None
-        #rows = None
-        #print(error)
-
-        #cur.execute("SELECT id FROM a_user WHERE username = %s", (username,))
-        #rows =cur.fetchall() 
-        #for row in rows:
-            #print(row[0]) 
-        #    error ='User {} is already registered'.format(username)
+        
         if not username:
-            error ='Username is required.'
+            error ='ป้อนชื่อ...'
         elif not password:
-            error ='Password is required.'
+            error ='ป้อนรหัสผ่าน password'
         else:
             cur.execute("SELECT id FROM a_user WHERE username = %s", (username,))
             row =cur.fetchone()
-             #rows = cur.fetchall() 
-             #for row in rows:  
-              #  error = 'User {} is already registered'.format(username)
-            
+             
             if row is not None:  
-                 error = 'User {} is already registered'.format(username)
-                 error =error +" id is :" + str(row[0])
+                 error = 'User {} ลงทะเบียนไปแล้ว'.format(username)
+                 error = error +" id is :" + str(row[0])
                  #error = 'Usersss {} is already registered'.format(row)
                                    
 
             #error =f'User {username} is already registered.'
         if error is None:
-            #the name is available, store in the database and go to
-            #the login page
-            #cur = db.cursor()
-            #db.execute(
-               
+                           
             cur.execute(   
             "INSERT INTO a_user (username, password) VALUES (%s, %s)",
                 (username, generate_password_hash(password))
             )
-            #db.commit()
+           
             dbConn.commit()
             return redirect(url_for('auth.login'))
 
@@ -77,16 +83,16 @@ def login():
             user =cur.fetchone()
             
             if user is None:
-                error ='Incorrect username'
+                error ='username ไม่ถูกต้อง' 
                                          #user['password']       
             elif not check_password_hash(user[2],password):
-                error ='Incorrenct password'
+                error ='password ไม่ถูกต้อง'
             #else:
             #   error =  str(user[2])
             if error is None:
                 session.clear()
                 session['user_id'] = user[0]  #userID
-                return redirect(url_for('auth.info')) #chang index to info
+                return redirect(url_for('inform.index')) #chang index to inform
             flash(error)
         return render_template('auth/login.html')
 @bp.route('/info',methods=('GET','POST'))
@@ -122,4 +128,4 @@ def test():
 @bp.route('/logout')
 def logout():
     session.clear()
-    return redirect(url_for('test'))
+    return redirect(url_for('auth.login'))

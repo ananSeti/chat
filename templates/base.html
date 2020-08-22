@@ -38,7 +38,7 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Messages</a></li>
+          <!-- <li><a href="#">Messages</a></li> -->
         </ul>
         <form class="navbar-form navbar-right" role="search">
           <div class="form-group input-group">
@@ -51,10 +51,17 @@
           </div>
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
-          <li><a href="{{ url_for('auth.register') }}">Register</a>
-          <li><a href="{{ url_for('auth.login') }}">Log In</a>
-          <li><a href="{{ url_for('auth.info') }}">info</a>
+          {% if g.user %}
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> บัญชีคุณ : {{ g.user[1] }} </a></li>
+         
+          <!-- <li><span>{{ g.user[1] }}</span> -->
+            <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
+          {% else %}
+           <li><a href="{{ url_for('auth.register') }}">ลงทะเบียน</a>
+            <li><a href="{{ url_for('auth.login') }}">Log In</a>
+          {% endif %}
+          
+          <!-- <li><a href="{{ url_for('auth.info') }}">ป้อนข้อมูล</a> -->
  
         </ul>
       </div>
@@ -64,9 +71,14 @@
   <header>
     {% block header %}{% endblock %}
   </header>
-  <!-- {% for message in get_flashed_messages() %} -->
-   <!-- <div class="flash">{{ message }}</div>  -->
-  <!--{% endfor %}-->
+   {% for message in get_flashed_messages() %} 
+   <div class=" alert alert-warning alert-dismissible" role='alert'>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" ><span aria-hidden="true">x</span></button>
+      
+    {{ message }}
+
+   </div> 
+  {% endfor %}
   {% block content %}{% endblock %}
 <!--/section> -->
 <footer class="container-fluid text-center">
