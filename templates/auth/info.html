@@ -1,4 +1,1041 @@
 {% extends 'base.html' %}
 {% block header %}
-<h1> {%block title%} information {% endblock%} </h1>
+<h1> {%block title%}{% endblock%} </h1>
 {% endblock%}
+{% block content%}
+<form class="form-inline">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <!--ข้อมูลส่วนตัว-->
+                
+                <div class="row">
+                    <div class="col-sm-12">
+                      <div class="row">
+                          <div class="col-sm-12">
+                              <div class="panel panel-default text-left">
+                              <div class="panel-body bg-primary ">
+                              <label for="name">ชื่อ: </label><input type="text" class="form-control" id="fname" placeholder="ป้อนชื่อ">
+                              <label for="name">นามสกุล: </label><input type="text" class="form-control" id="sname" placeholder="ป้อนนามสกุล">
+                              <label for="name">เพศ: </label><input type="text" class="form-control " id="sex" placeholder="เพศ"><br><p></p>
+                              
+                                 <label for="name">วดป(เกิด): </label><input type="text" class="form-control " id="birthday" placeholder="วันเดือนปี เช่น 04/11/2510 ">
+                              <p></p>
+                              <label for="name">เลขบัตรประชาชน</label>: </label><input type="text" class="form-control" id="idCard" placeholder="เลขบัตรประชาชน ">
+                              <label for="name">หมายเลขโทรศัพท์: </label><input type="text" class="form-control" id="phoneNumber" placeholder="หมายเลขโทรศัพท์ ">
+                              <label for="name">E-mail: </label><input type="email" class="form-control" id="email" placeholder="อีเมล์ ">
+                              <label for="name">สัญชาติ: </label><input type="text" class="form-control" id="nation" placeholder="สัญชาติ ">
+                              
+                              <label for="name">เชื้อชาติ: </label><input type="text" class="form-control" id="race" placeholder=" เชื่อชาติ ">
+                              </div> 
+                            </div>
+                            </div>
+                      </div>
+                     
+                    </div>
+                  </div> 
+               <!--วัน เดือน ปี -->
+               <div class="row ">
+                <div class="col-sm-12 ">
+                  <div class="panel panel-default text-left">
+                    <div class="panel-body  alert-success fade in ">
+                      <p contenteditable="true">ประวัติการตรวจพบมะเร็งของตนเองและญาติ(หมายเหตุ เลือกมะเร็งที่ตรวจพบจริง เลือกได้มากกว่า 1 ช่อง และอาจระบุอายุ
+                          ที่ตรวจพบมะเร็ง) *** หมายเหตุ มะเร็งที่พบขอเป็นมะเร็งที่ถ่ายทอดทางพันธุกรรมตามที่เลือก </p>
+                          
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- title-->
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="well">  
+                    <div class="col-sx-6">ประวัติการตรวจมะเร็ง</div>
+                  <div class="radio">
+                   <label> 
+                       <input type="radio" name="optionhistoryCA" id="opntionhistoryCA1" value="ไม่">ไม่พบ
+                   </label>
+                   <label  >
+                    <input type="radio" name="optionhistoryCA" id="opntionhistoryCA2" value="พบ">พบ
+                </label>
+                  </div>
+                  
+                    </div>
+                </div>
+                <div class="col-sm-6">         
+                  <div class="well text-left">
+                   
+                    <div class="checkbox">
+                        <label>
+                          <input type="checkbox" id="breatCheck" value="">
+                          มะเร็งเต้านมอายุ<input type="number" class="form-control" maxlength="2" id="bCA"> ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" id="bothbeastCheck" value="">ตรวจพบมะเร็งเต้านมสองข้าง
+                              <input type="number" class="form-control" id="2breast" disabled >ปี 
+                        </label>      
+                        <label>
+                          <input type="checkbox"  id ="bovalCheck" value="">
+                          มะเร็งรังไข่อายุ <input type="number" class="form-control" id="bovalyear">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" id="bgutCheck" value="">
+                          มะเร็งลำไส้ <input type="number" class="form-control" id="bgutyear">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" id="liverCheck" value="">
+                          มะเร็งตับอ่อนอายุ  <input type="number" class="form-control" id="bliveryear">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" id ="postGrandCheck" value="">
+                          มะเร็งต่อมลูกหมาก <input type="number" class="form-control" id="bpostyear">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" id="skinCheck" value="">
+                          มะเร็งผิวหนัง <input type="number" class="form-control" id="bskinyear">ปี
+                        </label>
+                    </div>
+        
+                 
+                  </div>
+                </div>
+                <!--จบประวัติตัวเอง -->          
+              </div>
+              <!-- จบประวัติตนเอง-->
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="well">  
+                    <div class="col-sx-6">ประวัติการตรวจพบมะเร็งในบุตร</div>
+                  <div class="radio">
+                  <label> 
+                      <input type="radio" name="optionhistoryson" id="opntionhistoryson1" value="ไม่">ไม่พบ
+                  </label>
+                  <label  >
+                    <input type="radio" name="optionhistoryson" id="opntionhistoryson2" value="พบ">พบ
+                </label>
+                  </div>
+                
+                </div>
+                
+        
+                </div> 
+                <div class="col-sm-6">         
+                  <div class="well text-left">
+                    <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" id="bsonCA">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งตับอ่อนอายุ <input type="number" class="form-control" id="bovalson">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งลำไส้อายุ <input type="number" class="form-control" id="bgutson">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" id="bliverson">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งผิวหนัง <input type="number" class="form-control" id="bskinson">ปี
+                        </label>
+                    </div>
+                </div>
+                </div>
+        
+              </div>
+              <!--จบประวัติลูกชาย-->
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="well">  
+                    <div class="col-sx-6">ประวัติการตรวจพบมะเร็งในบุตรี</div> 
+                  <div class="radio">
+                  <label> 
+                      <input type="radio" name="optionhistorydaughter" id="opntionhistorydaughter1" value="ไม่">ไม่พบ
+                  </label>
+                  <label  >
+                    <input type="radio" name="optionhistorydaughter" id="opntionhistorydaughter2" value="พบ">พบ
+                </label>
+                  </div>
+                
+                </div>
+                
+        
+                </div> 
+                <div class="col-sm-6">         
+                  <div class="well text-left">
+                    <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" id="bdaughterCA">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งตับอ่อนอายุ <input type="number" class="form-control" id="bovaldaughter">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งลำไส้อายุ <input type="number" class="form-control" id="bgutdaughter">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" id="bliverdaughter">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งผิวหนัง <input type="number" class="form-control" id="bskindaughter">ปี
+                        </label>
+                        
+                    </div>
+                </div>
+                </div>
+        
+              </div>
+              <!--จบประวัติบุตรี-->
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="well">  
+                    <div class="col-sx-6">ประวัติการตรวจพบมะเร็งในพ่อ</div>  
+                  <div class="radio">
+                  <label> 
+                      <input type="radio" name="optionhistoryfather" id="opntionhistoryfather1" value="ไม่">ไม่พบ
+                  </label>
+                  <label  >
+                    <input type="radio" name="optionhistoryfather" id="opntionhistoryfather2" value="พบ">พบ
+                </label>
+                  </div>
+                
+                </div>
+                
+        
+                </div> 
+                <div class="col-sm-6">         
+                  <div class="well text-left">
+                    <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" id="bfatherCA">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งตับอ่อนอายุ <input type="number" class="form-control" id="bovalfather">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งลำไส้อายุ <input type="number" class="form-control" id="bgutfather">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" id="bliverfather">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งผิวหนัง <input type="number" class="form-control" id="bskinfather">ปี
+                        </label>
+                    </div>
+                </div>
+                </div>
+        
+              </div>
+              <!--จบประวัติพ่อ-->
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="well">  
+                    <div class="col-sx-6">ประวัติการตรวจพบมะเร็งในแม่</div>  
+                  <div class="radio">
+                  <label> 
+                      <input type="radio" name="optionhistorymather" id="opntionhistorymather1" value="ไม่">ไม่พบ
+                  </label>
+                  <label  >
+                    <input type="radio" name="optionhistorymather" id="opntionhistorymather2" value="พบ">พบ
+                </label>
+                  </div>
+                
+                </div>
+                
+          
+                </div> 
+                <div class="col-sm-6">         
+                  <div class="well text-left">
+                    <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" id="bmatherCA">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งตับอ่อนอายุ <input type="number" class="form-control" id="bovalmather">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งลำไส้อายุ <input type="number" class="form-control" id="bgutmather">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" id="blivermather">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งผิวหนัง <input type="number" class="form-control" id="bskinmather">ปี
+                        </label>
+                    </div>
+                </div>
+                </div>
+          
+              </div>
+               <!--จบประวัติแม่-->
+               <div class="row">
+                <div class="col-sm-6">
+                  <div class="well">  
+                  <div class="col-sx-6">ประวัติการตรวจพบมะเร็งใน พี่/น้อง(ชาย)</div>
+                  <div class="radio">
+                  <label> 
+                      <input type="radio" name="optionhistorylbrother" id="opntionhistorylbrother1" value="ไม่">ไม่พบ
+                  </label>
+                  <label  >
+                    <input type="radio" name="optionhistorylbrother" id="opntionhistorylbrother2" value="พบ">พบ
+                </label>
+                  </div>
+                
+                </div>
+                
+          
+                </div> 
+                <div class="col-sm-6">         
+                  <div class="well text-left">
+                    <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" id="blbrotherCA">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งตับอ่อนอายุ <input type="number" class="form-control" id="bovallbrother">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งลำไส้อายุ <input type="number" class="form-control" id="bgutlbrother">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" id="bliverlbrother">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งผิวหนัง <input type="number" class="form-control" id="bskinbrothe">ปี
+                        </label>
+                    </div>
+                </div>
+                </div>
+          
+              </div> 
+              <!--จบประวัติพี่น้องชาย-->
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="well">  
+                    <div class="col-sx-6"> ประวัติการตรวจพบมะเร็งใน พี่/น้อง(หญิง)</div>  
+                  <div class="radio">
+                  <label>
+                      <input type="radio" name="optionhistorylsisther" id="opntionhistorylsyster1" value="ไม่">ไม่พบ
+                  </label>
+                  <label  >
+                    <input type="radio" name="optionhistorylsisther" id="opntionhistorylsyster2" value="พบ">พบ
+                </label>
+                  </div>
+                
+                </div>
+                
+          
+                </div> 
+                <div class="col-sm-6">         
+                  <div class="well text-left">
+                    <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" id="blsysterCA">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งตับอ่อนอายุ <input type="number" class="form-control" id="bovallsyster">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งลำไส้อายุ <input type="number" class="form-control" id="bgutllsyster">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" id="bliverllsyster">ปี
+                        </label>
+                        <label>
+                          <input type="checkbox" value="">
+                          มะเร็งผิวหนัง <input type="number" class="form-control" id="bskinlsyster">ปี
+                        </label>
+                    </div>
+                </div>
+                </div>
+          
+              </div> 
+             <!--จบประวัติน้องสาว-->
+             <div class="row">
+              <div class="col-sm-6">
+                <div class="well">  
+                  <div class="col-sx-6">ประวัติการตรวจพบมะเร็งใน ทวด(ชาย)</div>   
+                <div class="radio">
+                <label> 
+                    <input type="radio" name="optionhistorygrandfather" id="opntionhistorygrandfather1" value="ไม่">ไม่พบ
+                </label>
+                <label  >
+                  <input type="radio" name="optionhistorygrandfather" id="opntionhistorygrandfather2" value="พบ">พบ
+              </label>
+                </div>
+              
+              </div>
+              
+        
+              </div> 
+              <div class="col-sm-6">         
+                <div class="well text-left">
+                  <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" id="bgrandfatherCA">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งตับอ่อนอายุ <input type="number" class="form-control" id="bovalgrandfather">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งลำไส้อายุ <input type="number" class="form-control" id="bgutgrandfather">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" id="blivergrandfather">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งผิวหนัง <input type="number" class="form-control" id="bskingrandfather">ปี
+                      </label>
+                  </div>
+              </div>
+              </div>
+        
+             </div>
+             <!--จบประวัติทวดชาย-->   
+             <div class="row">
+              <div class="col-sm-6">
+                <div class="well">  
+                  <div class="col-sx-6">ประวัติการตรวจพบมะเร็งใน ทวด(หญิง)</div>  
+                <div class="radio">
+                <label> 
+                    <input type="radio" name="optionhistorygrandmother" id="opntionhistorygrandmother1" value="ไม่">ไม่พบ
+                </label>
+                <label  >
+                  <input type="radio" name="optionhistorygrandmother" id="opntionhistorygrandmother2" value="พบ">พบ
+              </label>
+                </div>
+              
+              </div>
+              
+        
+              </div> 
+              <div class="col-sm-6">         
+                <div class="well text-left">
+                  <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" id="bgrandmotherCA">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งตับอ่อนอายุ <input type="number" class="form-control" id="bovalgrandmother">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งลำไส้อายุ <input type="number" class="form-control" id="bgutgrandmother">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" id="blivergrandmother">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งผิวหนัง <input type="number" class="form-control" id="bskingrandmother">ปี
+                      </label>
+                  </div>
+              </div>
+              </div>
+        
+             </div>
+             <!--จบประวัติทวดหญิง-->
+             <div class="row">
+              <div class="col-sm-6">
+                <div class="well">  
+                  <div class="col-sx-6">ประวัติการตรวจพบมะเร็งใน ปู่</div>  
+                <div class="radio">
+                <label> 
+                    <input type="radio" name="optionhistoryfgrandfather" id="opntionhistoryfgrandfathe1" value="ไม่">ไม่พบ
+                </label>
+                <label  >
+                  <input type="radio" name="optionhistoryfgrandfather" id="opntionhistoryfgrandfather2" value="พบ">พบ
+              </label>
+                </div>
+              
+              </div>
+              
+        
+              </div> 
+              <div class="col-sm-6">         
+                <div class="well text-left">
+                  <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" id="bfgrandfatherCA">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งตับอ่อนอายุ <input type="number" class="form-control" id="bovalfgrandfather">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งลำไส้อายุ <input type="number" class="form-control" id="bgutfgrandfather">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" id="bliverfgrandfather">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งผิวหนัง <input type="number" class="form-control" id="bskingrandfather">ปี
+                      </label>
+                  </div>
+              </div>
+              </div>
+        
+             </div>
+            <!--จบประวัติปู่-->
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="well">  
+                  <div class="col-sx-6">ประวัติการตรวจพบมะเร็งใน ย่า</div>  
+                <div class="radio">
+                <label> 
+                    <input type="radio" name="optionhistorymgrandmather" id="opntionhistorymgrandmather1" value="ไม่">ไม่พบ
+                </label>
+                <label  >
+                  <input type="radio" name="optionhistorymgrandmather" id="opntionhistorymgrandmather2" value="พบ">พบ
+              </label>
+                </div>
+              
+              </div>
+              
+        
+              </div> 
+              <div class="col-sm-6">         
+                <div class="well text-left">
+                  <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" id="bmgrandmatherCA">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งตับอ่อนอายุ <input type="number" class="form-control" id="bovalmgrandmather">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งลำไส้อายุ <input type="number" class="form-control" id="bgutmgrandmather">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" id="blivermgrandmather">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งผิวหนัง <input type="number" class="form-control" id="bskinmgranmather">ปี
+                      </label>
+                  </div>
+              </div>
+              </div>
+        
+             </div> 
+            <!--จบประวัติย่า-->
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="well">  
+                  <div class="col-sx-6"> ประวัติการตรวจพบมะเร็งใน ตา</div>
+                <div class="radio">
+                <label>
+                    <input type="radio" name="optionhistoryfathermom" id="opntionhistoryfathermom1" value="ไม่">ไม่พบ
+                </label>
+                <label  >
+                  <input type="radio" name="optionhistoryfathermom" id="opntionhistoryfathermom2" value="พบ">พบ
+              </label>
+                </div>
+              
+              </div>
+              
+        
+              </div> 
+              <div class="col-sm-6">         
+                <div class="well text-left">
+                  <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" id="bfathermomCA">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งตับอ่อนอายุ <input type="number" class="form-control" id="bovalfathermom">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งลำไส้อายุ <input type="number" class="form-control" id="bgutfathermom">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" id="bliverfathermom">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งผิวหนัง <input type="number" class="form-control" id="bskinfathermom">ปี
+                      </label>
+                  </div>
+              </div>
+              </div>
+        
+             </div> 
+            <!--จบประวัติตา-->
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="well">  
+                <div class="col-sx-6">ประวัติการตรวจพบมะเร็งใน ยาย</div>  
+                <div class="radio">
+                <label> 
+                    <input type="radio" name="optionhistorymothermom" id="opntionhistorymothermom1" value="ไม่">ไม่พบ
+                </label>
+                <label  >
+                  <input type="radio" name="optionhistorymothermom" id="opntionhistorymothermom2" value="พบ">พบ
+              </label>
+                </div>
+              
+              </div>
+              
+        
+              </div> 
+              <div class="col-sm-6">         
+                <div class="well text-left">
+                  <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" id="bmothermomCA">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งตับอ่อนอายุ <input type="number" class="form-control" id="bovalmothermom">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งลำไส้อายุ <input type="number" class="form-control" id="bgutmothermom">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" id="blivermothermom">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งผิวหนัง <input type="number" class="form-control" id="bskinmothermom">ปี
+                      </label>
+                  </div>
+              </div>
+              </div>
+        
+             </div>
+            <!--จบประวัติยาย-->
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="well">  
+                  <div class="col-sx-6">ประวัติการตรวจพบมะเร็งใน ลุง</div> 
+                <div class="radio">
+                <label> 
+                    <input type="radio" name="optionhistorybiguncle" id="opntionhistorybiguncle1" value="ไม่">ไม่พบ
+                </label>
+                <label  >
+                  <input type="radio" name="optionhistorybiguncle" id="opntionhistorybiguncle2" value="พบ">พบ
+              </label>
+                </div>
+              
+              </div>
+              
+        
+              </div> 
+              <div class="col-sm-6">         
+                <div class="well text-left">
+                  <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" id="bbiguncleCA">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งตับอ่อนอายุ <input type="number" class="form-control" id="bovalbiguncle">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งลำไส้อายุ <input type="number" class="form-control" id="bgutbiguncle">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" id="bliverbiguncle">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งผิวหนัง <input type="number" class="form-control" id="bskinbiguncle">ปี
+                      </label>
+                  </div>
+              </div>
+              </div>
+        
+             </div>
+            <!--จบประวัติลุง-->
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="well">  
+                <div class="col-sx-6">ประวัติการตรวจพบมะเร็งใน ป้า</div>  
+                <div class="radio">
+                <label> 
+                    <input type="radio" name="optionhistorybigaunt" id="opntionhistorybigaunt1" value="ไม่">ไม่พบ
+                </label>
+                <label  >
+                  <input type="radio" name="optionhistorybigaunt" id="opntionhistorybigaunt2" value="พบ">พบ
+              </label>
+                </div>
+              
+              </div>
+              
+        
+              </div> 
+              <div class="col-sm-6">         
+                <div class="well text-left">
+                  <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" id="bbigauntCA">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งตับอ่อนอายุ <input type="number" class="form-control" id="bovalbigaunt">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งลำไส้อายุ <input type="number" class="form-control" id="bgutbigaunt">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" id="bliverbigaunt">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งผิวหนัง <input type="number" class="form-control" id="bskinbigaunt">ปี
+                      </label>
+                  </div>
+              </div>
+              </div>
+        
+             </div>
+            <!--จบประวัติป้า-->
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="well">  
+                <div class="col-sx-6"> ประวัติการตรวจพบมะเร็งใน น้า</div>  
+                <div class="radio">
+                <label>
+                    <input type="radio" name="optionhistorysmallaunt" id="opntionhistorysmallaunt1" value="ไม่">ไม่พบ
+                </label>
+                <label  >
+                  <input type="radio" name="optionhistorysmallaunt" id="opntionhistorysmallaunt2" value="พบ">พบ
+              </label>
+                </div>
+              
+              </div>
+              
+        
+              </div> 
+              <div class="col-sm-6">         
+                <div class="well text-left">
+                  <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" id="bsmallauntCA">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งตับอ่อนอายุ <input type="number" class="form-control" id="bovalsmallaunt">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งลำไส้อายุ <input type="number" class="form-control" id="bgutsmallaunt">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" id="bliversmallaunt">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งผิวหนัง <input type="number" class="form-control" id="bskinsmallaunt">ปี
+                      </label>
+                  </div>
+              </div>
+              </div>
+        
+             </div> 
+            <!--จบประวัติน้า-->
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="well">  
+                  <div class="col-sx-6">ประวัติการตรวจพบมะเร็งใน อา</div>  
+                <div class="radio">
+                <label>
+                    <input type="radio" name="optionhistorysmallbro" id="opntionhistorysmallbro1" value="ไม่">ไม่พบ
+                </label>
+                <label  >
+                  <input type="radio" name="optionhistorysmallbro" id="opntionhistorysmallbro2" value="พบ">พบ
+              </label>
+                </div>
+              
+              </div>
+              
+        
+              </div> 
+              <div class="col-sm-6">         
+                <div class="well text-left">
+                  <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" id="bsmallbroCA">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งตับอ่อนอายุ <input type="number" class="form-control" id="bovalsmallbro">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งลำไส้อายุ <input type="number" class="form-control" id="bgutsmallbro">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" id="bliversmallbro">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งผิวหนัง <input type="number" class="form-control" id="bskinsmallbro">ปี
+                      </label>
+                  </div>
+              </div>
+              </div>
+        
+             </div>
+            <!--จบประวัติอา--> 
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="well">  
+                  <div class="col-sx-6">ประวัติการตรวจพบมะเร็งในหลาน(ชาย)</div>  
+                <div class="radio">
+                <label>
+                    <input type="radio" name="optionhistorymengrandchild" id="opntionhistorymengrandchild1" value="ไม่">ไม่พบ
+                </label>
+                <label  >
+                  <input type="radio" name="optionhistorymengrandchild" id="opntionhistorymengrandchild" value="พบ">พบ
+              </label>
+                </div>
+              
+              </div>
+              
+        
+              </div> 
+              <div class="col-sm-6">         
+                <div class="well text-left">
+                  <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" id="bmengrandchildCA">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งตับอ่อนอายุ <input type="number" class="form-control" id="bovalmengrandchild">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งลำไส้อายุ <input type="number" class="form-control" id="bgutmengrandchild">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" id="blivermengrandchild">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งผิวหนัง <input type="number" class="form-control" id="bskinmengrandchild">ปี
+                      </label>
+                  </div>
+              </div>
+              </div>
+        
+             </div>
+            <!--จบประวัติหลานชาย-->
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="well">  
+                <div class="radio">
+                <label> ประวัติการตรวจพบมะเร็งในหลาน(หญิง)
+                    <input type="radio" name="optionhistorywomengrandchild" id="opntionhistorywomengrandchild" value="ไม่">ไม่พบ
+                </label>
+                <label  >
+                  <input type="radio" name="optionhistorywomengrandchild" id="opntionhistorywomengrandchild" value="พบ">พบ
+              </label>
+                </div>
+              
+              </div>
+              
+        
+              </div> 
+              <div class="col-sm-6">         
+                <div class="well text-left">
+                  <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" id="bwomengrandchildCA">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งตับอ่อนอายุ <input type="number" class="form-control" id="bovalwomengrandchild">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งลำไส้อายุ <input type="number" class="form-control" id="bgutwomengrandchild">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" id="bliverwomengrandchild">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งผิวหนัง <input type="number" class="form-control" id="bskinwomengrandchild">ปี
+                      </label>
+                  </div>
+              </div>
+              </div>
+        
+             </div>
+            <!--จบประวัติหลานหญิง-->
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="well">  
+                  <div class="col-sx-6">ประวัติการตรวจพบมะเร็งในเหลน(ชาย)</div>  
+                <div class="radio">
+                <label> 
+                    <input type="radio" name="optionhistorythirdmengrandchild" id="opntionhistorythirdmengrandchild1" value="ไม่">ไม่พบ
+                </label>
+                <label  >
+                  <input type="radio" name="optionhistorythirdmengrandchild" id="opntionhistorythirdmengrandchild2" value="พบ">พบ
+              </label>
+                </div>
+              
+              </div>
+              
+        
+              </div> 
+              <div class="col-sm-6">         
+                <div class="well text-left">
+                  <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" id="bthirdmengrandchildCA">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งตับอ่อนอายุ <input type="number" class="form-control" id="bovalthirdmengrandchild">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งลำไส้อายุ <input type="number" class="form-control" id="bgutthirdmengrandchild">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" id="bliverthirdmengrandchild">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งผิวหนัง <input type="number" class="form-control" id="bskinmengrandchild">ปี
+                      </label>
+                  </div>
+              </div>
+              </div>
+        
+             </div>
+            <!--จบประวัติเหลน(ชาย)-->
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="well">  
+                  <div class="col-sx-6">ประวัติการตรวจพบมะเร็งในเหลน(หญิง)</div>  
+                <div class="radio">
+                <label> 
+                    <input type="radio" name="optionhistorythirdwomangrandchild" id="opntionhistorythirdwomangrandchild1" value="ไม่">ไม่พบ
+                </label>
+                <label  >
+                  <input type="radio" name="optionhistorythirdwomangrandchild" id="opntionhistorythirdwomangrandchild2" value="พบ">พบ
+              </label>
+                </div>
+              
+              </div>
+              
+        
+              </div> 
+              <div class="col-sm-6">         
+                <div class="well text-left">
+                  <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" id="bthirdwomangrandchildCA">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งตับอ่อนอายุ <input type="number" class="form-control" id="bovalthirdwomangrandchild">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งลำไส้อายุ <input type="number" class="form-control" id="bgutthirdwomangrandchild">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" id="bliverthirdwomangrandchild">ปี
+                      </label>
+                      <label>
+                        <input type="checkbox" value="">
+                        มะเร็งผิวหนัง <input type="number" class="form-control" id="bskinwomangrandchild">ปี
+                      </label>
+                  </div>
+              </div>
+              </div>
+        
+             </div>
+        
+            <!--จบประวัติเหลน(หญิง)-->
+          </div>
+                <!--end div main row-->
+            <div class="col-sm-1">
+          </div>
+         </div>
+         <button type="submit" class="btn btn-primary btn-lg btn-block">บันทึกผล</button>
+        
+
+            </div>
+            <div class="col-sm-1"></div>
+        
+    </div>
+</form>
+
+{% endblock %}
