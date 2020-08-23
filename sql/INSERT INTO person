@@ -1,0 +1,2 @@
+INSERT INTO person(accountid,first_name,last_name,birthday,sex,idcard,phonenumber,email,nation,race)
+VALUE()

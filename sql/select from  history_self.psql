@@ -1,0 +1,3 @@
+select personhistoryid,optionhistorycacheck,beastcheck,bcayear,bothbreatcacheck,bovalcheck,bovalyear,bgutcheck,
+bgutyear,livercheck,bliveryear,postgrandcheck,bpostgrandyear,skincheck,bskinyear,created 
+from  history_self h join a_user u on h.personhistoryid = u.id ;
