@@ -16,7 +16,7 @@ def index():
         user_id =session['user_id']
     else: return redirect(url_for('auth.login'))
     dbConn = get_db()
-    # get information 
+    # ข้อมูลสาวนตัว get information 
     cur =dbConn.cursor()
     cur.execute(
            'select accountid ,first_name,last_name,birthday,sex,idcard,phonenumber,email,nation,race,created'
@@ -50,7 +50,7 @@ def index():
                 nation =infos[0][8],
                 race = infos[0][9]
             )
-    # get self history
+    # ประวัติส่วนตัว get self history
     cur .execute(
         'select personhistoryid,optionhistorycacheck,beastcheck,bcayear,bothbreatcacheck,bovalcheck,bovalyear,bgutcheck,'
          'bgutyear,livercheck,bliveryear,postgrandcheck,bpostgrandyear,skincheck,bskinyear,created' 
@@ -92,9 +92,28 @@ def index():
             postGrandyear=his[0][12],
             skinCheck=his[0][13],
             skinyear=his[0][14]
-
-
         )
+    # ประวัติการตรวจมะเร็งในบุตร
+
+    #ประวัตรการตวจในบุตรสาว
+    #ประวัติการตรวจในพ่อ
+    #ประวัติการตรวจในแม่
+    #ประวัติการตรวจในพี่/น้อง(ชาย)
+    #ประวัติการตรวจในพี่/น้อง(หญิง)
+    #ประวัติการตรวจในทวด(ชาย)
+    #ประวัติการตรวจในทวก(หญิง)
+    #ประวัติการตวจในปู่
+    #ประวัติการตรวจในย่า
+    #ประวัติการตรวจในตา
+    #ประวัติการตรวจในยาย
+    #ประวัติการตีรวจในลุง
+    #ประวัติการตรวจในป้า
+    #ประวัติการตาวจในน้า
+    #ประวัติการตรวจในอา
+    #ประวัติการตรวจในหลาน(ชาย)
+    #ประวัติกสนตรวจในหลาน(หญิง)
+    #ประวัติการตรวจในเหลน(ชาย)
+    #ประวัติการตรวจในเหล(หญิง)
     
     if request.method=='POST':
             p =  person.personinfo(
