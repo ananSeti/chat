@@ -54,11 +54,11 @@ def index():
     cur .execute(
         'select personhistoryid,optionhistorycacheck,beastcheck,bcayear,bothbreatcacheck,bovalcheck,bovalyear,bgutcheck,'
          'bgutyear,livercheck,bliveryear,postgrandcheck,bpostgrandyear,skincheck,bskinyear,created' 
-         ' from  history_self h join a_user u on h.personhistoryid = %s order by u.id DESC LIMIT 1',(user_id,)
+         ' from  history_self h join a_user u on h.personhistoryid = %s order by h.id DESC LIMIT 1',(user_id,)
     )
     his =cur.fetchall()
     if not his:
-        pHistory =person.personHistory(
+        ph =person.personHistory(
             accountid = 0 ,
             historyCa = 0,
             breastCheck = 0,
@@ -75,8 +75,27 @@ def index():
             skinCheck = 0,
             skinyear = 0
         )
-    
+    else:
+        ph = person.personHistory(
+            accountid=his[0][0],
+            historyCa=his[0][1],
+            breastCheck=his[0][2],
+            bCAyear=his[0][3],
+            bothbeastCheck=his[0][4],
+            bovalCheck=his[0][5],
+            bovalyear=his[0][6],
+            bgutCheck=his[0][7],
+            bgutyear=his[0][8],
+            liverCheck=his[0][9],
+            liveryear=his[0][10],
+            postGrandCheck=his[0][11],
+            postGrandyear=his[0][12],
+            skinCheck=his[0][13],
+            skinyear=his[0][14]
 
+
+        )
+    
     if request.method=='POST':
             p =  person.personinfo(
                     accountid = user_id,
@@ -101,34 +120,38 @@ def index():
                  error ='บันทึกข้อมมูลคุณ:' + p.fname + ' เรียบร้อย ...'  
             flash(error)
             #insert person history infomation   
+            error=None
             ph = person.personHistory(
                 accountid=user_id,
-                historyCa = request.form.get('optionhistoryCA'),
-                breastCheck =request.form.get('breastCheck'),
-                bCAyear = request.form.get('bCAyear'),
-                bothbeastCheck = request.form.get('bothbeastCheck'),
-                bovalCheck = request.form.get('bovalCheck'),
-                bovalyear = request.form.get('bovalyear'),
-                bgutCheck = request.form.get('bgutCheck'),
-                bgutyear = request.form.get('bgutyear'),
-                liverCheck =request.form.get('liverCheck'),
-                liveryear = request.form.get('bliveryear'),
-                postGrandCheck =request.form.get('postGrandCheck'),
-                postGrandyear = request.form.get('bpostyear'),
-                skinCheck = request.form.get('skinCheck'),
-                skinyear = request.form.get('bskinyear')
-
+                historyCa = int(request.form.get('optionhistoryCA')) if not (request.form.get('optionhistoryCA'))==None  else 0,
+                breastCheck =int(request.form.get('breastCheck')) if not (request.form.get('breastCheck'))==None  else 0,
+                bCAyear = int(request.form.get('bCAyear')) if not (request.form.get('bCAyear'))==''  else 0,
+                bothbeastCheck = int(request.form.get('bothbeastCheck')) if not (request.form.get('bothbeastCheck'))==None  else 0 ,
+                bovalCheck = request.form.get('bovalCheck') if not (request.form.get('bovalCheck'))==None  else 0,
+                bovalyear = int(request.form.get('bovalyear')) if not (request.form.get('bovalyear'))==''  else 0,
+                bgutCheck = request.form.get('bgutCheck')if not (request.form.get('bgutCheck'))==None  else 0,
+                bgutyear = int(request.form.get('bgutyear')) if not (request.form.get('bgutyear'))==''  else 0,
+                liverCheck =request.form.get('liverCheck') if not (request.form.get('liverCheck'))==None  else 0,
+                liveryear = int(request.form.get('bliveryear')) if not (request.form.get('bliveryear'))==''  else 0,
+                postGrandCheck =request.form.get('postGrandCheck') if not (request.form.get('postGrandCheck'))==None  else 0,
+                postGrandyear = int(request.form.get('bpostyear')) if not (request.form.get('bpostyear'))==''  else 0,
+                skinCheck = request.form.get('skinCheck') if not (request.form.get('skinCheck'))==None  else 0,
+                skinyear =   int(request.form.get('bskinyear')) if not (request.form.get('bskinyear'))==''  else 0
+                  
             )
             cur.execute(
                 "INSERT INTO history_self(personhistoryid,optionhistorycacheck,beastcheck,bcayear,bothbreatcacheck,bovalcheck,bovalyear,bgutcheck,"
                 " bgutyear,livercheck,bliveryear,postgrandcheck,bpostgrandyear,skincheck,bskinyear) "
                 " VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
-                ()
+                (ph.accountid,ph.historyCa,ph.breastCheck,ph.bCAyear,ph.bothbeastCheck,ph.bovalCheck,ph.bovalyear,ph.bgutCheck,
+                ph.bgutyear,ph.liverCheck,ph.liveryear,ph.postGrandCheck,ph.postGrandyear,ph.skinCheck,ph.skinyear
+                )
             ) 
-            if erro is None:
+            if error is None:
                 dbConn.commit()
-                error = 'บันทึกประวัติส่วนตัวคุณ: +'
-            return render_template('inform/index.html',p=p)
+                error = 'บันทึกประวัติส่วนตัวคุณ: ' + p.fname + ' เรียบร้อย...' 
+                flash(error)
+            return render_template('inform/index.html',p=p,ph=ph)
     if error is not None:
         flash(error) 
-    return render_template('inform/index.html',p=p)
+    return render_template('inform/index.html',p=p,ph=ph)

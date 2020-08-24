@@ -14,7 +14,8 @@
 {% block content%}
 
 
-{% set person =p%}
+{% set person =p  %}
+
 <form class="form-inline" method="POST" >
     <div class="container text-center">
         <div class="row">
@@ -28,27 +29,27 @@
                           <div class="col-sm-12">
                               <div class="panel panel-default text-left">
                               <div class="panel-body bg-primary ">
-                              <label for="name">ชื่อ: </label><input type="text" class="form-control" name="fname" id="fname" value="{{person.fname}}" placeholder="ป้อนชื่อ">
-                              <label for="name">นามสกุล: </label><input type="text" class="form-control" name="sname" id="sname" value="{{person.sname}}" placeholder="ป้อนนามสกุล">
+                              <label for="name">ชื่อ: </label><input type="text" class="form-control" name="fname" id="fname" value="{{person.fname}}" placeholder="ป้อนชื่อ" required>
+                              <label for="name">นามสกุล: </label><input type="text" class="form-control" name="sname" id="sname" value="{{person.sname}}" placeholder="ป้อนนามสกุล" required>
                               
                               <!-- <label for="name">เพศ: </label><input type="text" class="form-control " id="sex"  value="{{person.sexinfo()}}"  placeholder="เพศ"><br><p></p> -->
                               <label for="sex">เพศ:</label>
-                              <select class="form-control" id="sex" name="sex">
+                              <select class="form-control" id="sex" name="sex" required>
                               <option value="0" {%if person.sex == 0 %}selected{%endif%} >ไม่ระบุ</option>
                               <option value="1" {% if person.sex == 1 %} selected {%endif%}>ชาย</option>
                               <option value="2" {%if person.sex == 2 %}selected {%endif%}>หญิง</option>
                                </select> 
                               <br><p></p> 
 
-                                 <label for="name">วดป(เกิด): </label><input type="date" class="form-control" name="birthday" id="birthday" value="{{person.birthday}}" placeholder="วันเดือนปี เช่น 04/11/2510 ">
+                                 <label for="name">วดป(เกิด): </label><input type="date" class="form-control" name="birthday" id="birthday" value="{{person.birthday}}" placeholder="วันเดือนปี เช่น 04/11/2510 " required>
                               
-                              <label for="name">เลขบัตรประชาชน</label>: </label><input type="text" class="form-control"name="idCard" id="idCard" value="{{person.idCard}}" placeholder="เลขบัตรประชาชน ">
+                              <label for="name">เลขบัตรประชาชน</label>: </label><input type="text" class="form-control"name="idCard" id="idCard" value="{{person.idCard}}" placeholder="เลขบัตรประชาชน " required>
                               <br><p></p>
-                              <label for="name">หมายเลขโทรศัพท์: </label><input type="text" class="form-control" name="phoneNumber" id="phoneNumber" value="{{person.phoneNumber}}" placeholder="หมายเลขโทรศัพท์ ">
-                              <label for="name">E-mail: </label><input type="email" class="form-control" name="email" id="email" value="{{person.email}}" placeholder="อีเมล์ ">
-                              <label for="name">สัญชาติ: </label><input type="text" class="form-control" name="nation" id="nation" value="{{person.nation}}" placeholder="สัญชาติ ">
+                              <label for="name">หมายเลขโทรศัพท์: </label><input type="text" class="form-control" name="phoneNumber" id="phoneNumber" value="{{person.phoneNumber}}" placeholder="หมายเลขโทรศัพท์ " required>
+                              <label for="name">E-mail: </label><input type="email" class="form-control" name="email" id="email" value="{{person.email}}" placeholder="อีเมล์ " required>
+                              <label for="name">สัญชาติ: </label><input type="text" class="form-control" name="nation" id="nation" value="{{person.nation}}" placeholder="สัญชาติ " required>
                               <br><p></p>
-                              <label for="name">เชื้อชาติ: </label><input type="text" class="form-control" name="race" id="race" value="{{person.race}}" placeholder=" เชื่อชาติ ">
+                              <label for="name">เชื้อชาติ: </label><input type="text" class="form-control" name="race" id="race" value="{{person.race}}" placeholder=" เชื้อชาติ " required>
                               </div> 
                             </div>
                             </div>
@@ -75,10 +76,10 @@
                     <div class="col-sx-6">ประวัติการตรวจมะเร็ง</div>
                   <div class="radio">
                    <label> 
-                       <input type="radio" name="optionhistoryCA" id="opntionhistoryCA1" value="0">ไม่พบ
+                       <input type="radio" name="optionhistoryCA" id="opntionhistoryCA1" value="0" {%if ph.historyCa==0 %}checked{%endif%} >ไม่พบ
                    </label>
                    <label  >
-                    <input type="radio" name="optionhistoryCA" id="opntionhistoryCA2" value="1">พบ
+                    <input type="radio" name="optionhistoryCA" id="opntionhistoryCA2" value="1" {%if ph.historyCa==1 %}checked{%endif%} >พบ
                 </label>
                   </div>
                   
@@ -89,32 +90,32 @@
                    
                     <div class="checkbox">
                         <label>
-                          <input type="checkbox" id="breatCheck" name="breastCheck" value="1">
-                          มะเร็งเต้านมอายุ<input type="number" class="form-control" maxlength="2" name="bCAyear" id="bCAyear"> ปี
+                          <input type="checkbox" id="breatCheck" name="breastCheck" value="1" {%if ph.breastCheck==1 %}checked{%endif%}>
+                          มะเร็งเต้านมอายุ<input type="number" class="form-control" maxlength="2" name="bCAyear" id="bCAyear" value= {{ph.bCAyear}}> ปี
                         </label>
                         <label>
-                          <input type="checkbox" id="bothbeastCheck" name="bothbeastCheck" value="1">ตรวจพบมะเร็งเต้านมสองข้าง
+                          <input type="checkbox" id="bothbeastCheck" name="bothbeastCheck" value="1" {%if ph.bothbeastCheck==1 %}checked{%endif%} >ตรวจพบมะเร็งเต้านมสองข้าง
                               <input type="number" class="form-control" id="2breast" disabled >ปี 
                         </label>      
                         <label>
-                          <input type="checkbox"  id ="bovalCheck" name="bovalCheck" value="1">
-                          มะเร็งรังไข่อายุ <input type="number" class="form-control" id="bovalyear" name="bovalyear">ปี
+                          <input type="checkbox"  id ="bovalCheck" name="bovalCheck" value="1" {%if ph.bovalCheck==1 %}checked{%endif%}>
+                          มะเร็งรังไข่อายุ <input type="number" class="form-control" id="bovalyear" name="bovalyear" value={{ph.bovalyear}} >ปี
                         </label>
                         <label>
-                          <input type="checkbox" id="bgutCheck" name="bgutCheck" value="1">
-                          มะเร็งลำไส้ <input type="number" class="form-control" id="bgutyear" name="bgutyear">ปี
+                          <input type="checkbox" id="bgutCheck" name="bgutCheck" value="1" {%if ph.bgutCheck==1 %}checked{%endif%}>
+                          มะเร็งลำไส้ <input type="number" class="form-control" id="bgutyear" name="bgutyear" value={{ph.bgutyear}}>ปี
                         </label>
                         <label>
-                          <input type="checkbox" id="liverCheck" name="liverCheck"value="1">
-                          มะเร็งตับอ่อนอายุ  <input type="number" class="form-control" id="bliveryear" name="bliveryear" >ปี
+                          <input type="checkbox" id="liverCheck" name="liverCheck"value="1" {%if ph.liverCheck==1 %}checked{%endif%}>
+                          มะเร็งตับอ่อนอายุ  <input type="number" class="form-control" id="bliveryear" name="bliveryear" value={{ph.liveryear}} >ปี
                         </label>
                         <label>
-                          <input type="checkbox" id ="postGrandCheck" name="postGrandCheck" value="1">
-                          มะเร็งต่อมลูกหมาก <input type="number" class="form-control" id="bpostGrandyear" name="bpostyear">ปี
+                          <input type="checkbox" id ="postGrandCheck" name="postGrandCheck" value="1"{%if ph.postGrandCheck==1 %}checked{%endif%}>
+                          มะเร็งต่อมลูกหมาก <input type="number" class="form-control" id="bpostGrandyear" name="bpostyear" value={{ph.postGrandyear}} >ปี
                         </label>
                         <label>
-                          <input type="checkbox" id="skinCheck" name="skinCheck" value="1">
-                          มะเร็งผิวหนัง <input type="number" class="form-control" id="bskinyear" name="bskinyear">ปี
+                          <input type="checkbox" id="skinCheck" name="skinCheck" value="1" {%if ph.skinCheck==1 %}checked{%endif%}>
+                          มะเร็งผิวหนัง <input type="number" class="form-control" id="bskinyear" name="bskinyear" value={{ph.skinyear}}>ปี
                         </label>
                     </div>
         
