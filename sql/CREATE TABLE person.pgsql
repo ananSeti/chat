@@ -1,5 +1,3 @@
-DROP TABLE iF EXISTS person;
-DROP TABLE IF EXISTS history_self;
 
 CREATE TABLE person(
     id SERIAL PRIMARY KEY ,

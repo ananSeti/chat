@@ -4,6 +4,7 @@ from flask import(
 from werkzeug.exceptions import abort
 from chat.db import get_db
 from chat.chatclass import person
+import history_related
 
 bp =Blueprint('inform',__name__)
 
@@ -60,7 +61,7 @@ def index():
     if not his:
         ph =person.personHistory(
             accountid = 0 ,
-            historyCa = 0,
+            historyCa = 99,
             breastCheck = 0,
             bCAyear = 0,
             bothbeastCheck = 0,
@@ -93,8 +94,8 @@ def index():
             skinCheck=his[0][13],
             skinyear=his[0][14]
         )
-    # ประวัติการตรวจมะเร็งในบุตร
-
+    # ประวัติการตรวจมะเร็งในบุตรชาย
+    sonh=history_related.get_sonHistory(user_id)
     #ประวัตรการตวจในบุตรสาว
     #ประวัติการตรวจในพ่อ
     #ประวัติการตรวจในแม่
@@ -113,7 +114,7 @@ def index():
     #ประวัติการตรวจในหลาน(ชาย)
     #ประวัติกสนตรวจในหลาน(หญิง)
     #ประวัติการตรวจในเหลน(ชาย)
-    #ประวัติการตรวจในเหล(หญิง)
+    #ประวัติการตรวจในเหลน(หญิง)
     
     if request.method=='POST':
             p =  person.personinfo(
@@ -170,7 +171,9 @@ def index():
                 dbConn.commit()
                 error = 'บันทึกประวัติส่วนตัวคุณ: ' + p.fname + ' เรียบร้อย...' 
                 flash(error)
-            return render_template('inform/index.html',p=p,ph=ph)
+            # บันทึกประวัติลูกชาย
+            sonh = history_related.insert_sonHistory(user_id)
+            return render_template('inform/index.html',p=p,ph=ph,sonh=sonh)
     if error is not None:
         flash(error) 
-    return render_template('inform/index.html',p=p,ph=ph)
+    return render_template('inform/index.html',p=p,ph=ph,sonh=sonh)
