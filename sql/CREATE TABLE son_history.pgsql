@@ -34,7 +34,7 @@ daughtergutcheck INTEGER,
 daughtergutyear INTEGER,
 daughterpostGrandCheck INTEGER, /*มะเร็งต่อมลูกหมาก*/
 daughterpostGrandyear INTEGER, /* ปีที่เป็น*/
-daughterskinChek  INTEGER, /*มะเร็งผิวหนัง */
+daughterskinCheck  INTEGER, /*มะเร็งผิวหนัง */
 daughterskinyear INTEGER, /*ปีที่เป็น */
 created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 FOREIGN KEY(daughterHistoryId) REFERENCES a_user(id)

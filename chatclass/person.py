@@ -53,18 +53,18 @@ class sonHistory:
        self.sonskinyear =sonskinyear
 #ประวัติลูกสาว
 class daughterHistory:
-    def __init__(self,acoountid,optionhistorydaughter,daughterbreastCheck,daughterbreastyear,daughterliverCheck,daughterliveryear,daughtergutcheck,daughtergutyear,daughterpostGrandCheck,daughterpostGrandyear,daughterskinChek,daughterskinyear):
-        self.accountid = acoountid
+    def __init__(self,accountid,optionhistorydaughter,daughterbreastCheck,daughterbreastyear,daughterliverCheck,daughterliveryear,daughtergutCheck,daughtergutyear,daughterpostGrandCheck,daughterpostGrandyear,daughterskinCheck,daughterskinyear):
+        self.accountid = accountid
         self.optionhistorydaughter = optionhistorydaughter
         self.daughterbreastCheck =  daughterbreastCheck
         self.daughterbreastyear = daughterbreastyear
         self.daughterliverCheck = daughterliverCheck
         self.daughterliveryear =daughterliveryear
-        self.daughtergutcheck = daughtergutcheck
+        self.daughtergutCheck = daughtergutCheck
         self.daughtergutyear = daughtergutyear
         self.daughterpostGrandCheck =daughterpostGrandCheck
-        self.daughterpostGrandCheck = daughterpostGrandyear
-        self.daughterskinChek = daughterskinChek
+        self.daughterpostGrandyear = daughterpostGrandyear
+        self.daughterskinCheck = daughterskinCheck
         self.daughterskinyear =daughterskinyear
 #ประวัติพ่อ
 class fatherHistory:

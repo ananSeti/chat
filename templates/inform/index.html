@@ -177,10 +177,10 @@
                     <div class="col-sx-6">ประวัติการตรวจพบมะเร็งในบุตรี</div> 
                   <div class="radio">
                   <label> 
-                      <input type="radio" name="optionhistorydaughter" id="opntionhistorydaughter1" value="0">ไม่พบ
+                      <input type="radio" name="optionhistorydaughter" id="opntionhistorydaughter1" value="0" {%if dah.optionhistorydaughter==0 %}checked{%endif%}>ไม่พบ
                   </label>
                   <label  >
-                    <input type="radio" name="optionhistorydaughter" id="opntionhistorydaughter2" value="1">พบ
+                    <input type="radio" name="optionhistorydaughter" id="opntionhistorydaughter2" value="1" {%if dah.optionhistorydaughter==1 %}checked{%endif%}>พบ
                 </label>
                   </div>
                 
@@ -192,24 +192,24 @@
                   <div class="well text-left">
                     <div class="checkbox">
                         <label>
-                          <input type="checkbox" name="daughterbreastCheck" value="1">
-                          มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" name="daughterbreastyear"  id="daughterbreastyear" value="">ปี
+                          <input type="checkbox" name="daughterbreastCheck" value="1" {%if dah.daughterbreastCheck==1 %}checked{%endif%} >
+                          มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" name="daughterbreastyear"  id="daughterbreastyear" value={{dah.daughterbreastyear}}>ปี
                         </label>
                         <label>
-                          <input type="checkbox" name="daughterliverCheck"  value="1">
-                          มะเร็งตับอ่อนอายุ <input type="number" class="form-control" name="daughterliveryear"  id="daughterliveryear"value ="" >ปี
+                          <input type="checkbox" name="daughterliverCheck"  value="1" {%if dah.daughterliverCheck==1 %}checked{%endif%}  >
+                          มะเร็งตับอ่อนอายุ <input type="number" class="form-control" name="daughterliveryear"  id="daughterliveryear"value ={{dah.daughterliveryear}} >ปี
                         </label>
                         <label>
-                          <input type="checkbox" name="daughtergutcheck"  value="1">
-                          มะเร็งลำไส้อายุ <input type="number" class="form-control" name="daughtergutyear"  id="daughtergutyear" value="">ปี
+                          <input type="checkbox" name="daughtergutCheck"  value="1" {%if dah.daughtergutCheck==1 %}checked{%endif%} >
+                          มะเร็งลำไส้อายุ <input type="number" class="form-control" name="daughtergutyear"  id="daughtergutyear" value={{dah.daughtergutyear}}>ปี
                         </label>
                         <label>
-                          <input type="checkbox" name ="daughterpostGrandCheck"  value="1">
-                          มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" name="daughterpostGrandyear"  id="daughterpostGrandyear">ปี
+                          <input type="checkbox" name ="daughterpostGrandCheck"  value="1" {%if dah.daughterpostGrandCheck==1 %}checked{%endif%} >
+                          มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" name="daughterpostGrandyear"  id="daughterpostGrandyear" value={{dah.daughterpostGrandyear}}>ปี
                         </label>
                         <label>
-                          <input type="checkbox" name="daughterskinChek"  value="1">
-                          มะเร็งผิวหนัง <input type="number" class="form-control" name="daughterskinyear" id="daughterskinyear">ปี
+                          <input type="checkbox" name="daughterskinCheck"  value="1" {%if dah.daughterskinCheck==1 %}checked{%endif%} >
+                          มะเร็งผิวหนัง <input type="number" class="form-control" name="daughterskinyear" id="daughterskinyear"value={{dah.daughterskinyear}} >ปี
                         </label>
                         
                     </div>
