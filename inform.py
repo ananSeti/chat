@@ -99,6 +99,7 @@ def index():
     #ประวัตรการตรวจในบุตรสาว
     dah = history_related.get_daugtherHistory(user_id)        
     #ประวัติการตรวจในพ่อ
+    fh = history_related.get_fatherHistory(user_id)
     #ประวัติการตรวจในแม่
     #ประวัติการตรวจในพี่/น้อง(ชาย)
     #ประวัติการตรวจในพี่/น้อง(หญิง)
@@ -176,7 +177,10 @@ def index():
             sonh = history_related.insert_sonHistory(user_id)
             #บันทีกประวัติลูกสาว
             dah = history_related.insert_daugterHistory(user_id)
-            return render_template('inform/index.html',p=p,ph=ph,sonh=sonh,dah=dah)
+            #บันทึกประวัติพ่่อ
+            fh = history_related.insert_fatherHistory(user_id)
+
+            return render_template('inform/index.html',p=p,ph=ph,sonh=sonh,dah=dah,fh=fh)
     if error is not None:
         flash(error) 
-    return render_template('inform/index.html',p=p,ph=ph,sonh=sonh,dah=dah)
+    return render_template('inform/index.html',p=p,ph=ph,sonh=sonh,dah=dah,fh=fh)

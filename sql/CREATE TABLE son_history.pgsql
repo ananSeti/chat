@@ -44,7 +44,7 @@ CREATE TABLE father_history(
 id SERIAL PRIMARY KEY,
 fatherHistoryId INTEGER not NULL,
 optionhistoryfather INTEGER , /* 0. ไม่เป็น  1.เป็น*/
-fatherbreatCheck INTEGER,
+fatherbreastCheck INTEGER,
 fatherbreastyear INTEGER, /*ปีที่เป็นมะเร็งเต้านม*/
 --bovalCheck INTEGER,/*มะเร็งรังไข่ * 0 ไม่พบ 1 พบ*/
 --bovalYear INTEGER,
@@ -53,7 +53,7 @@ fatherliveryear INTEGER, /*ปีที่เป็น*/
 fathergutCheck INTEGER,
 fathergutyear INTEGER,
 fatherpostGrandCheck INTEGER, /*มะเร็งต่อมลูกหมาก*/
-fartherpostGrandyear INTEGER, /* ปีที่เป็น*/
+fatherpostGrandyear INTEGER, /* ปีที่เป็น*/
 fatherskinCheck  INTEGER, /*มะเร็งผิวหนัง */
 fatherskinyear INTEGER, /*ปีที่เป็น */
 created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,

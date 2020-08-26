@@ -161,3 +161,81 @@ def insert_daugterHistory(user_id):
                 error = 'บันทึกประวัติลูกสาว เรียบร้อย...' 
                 flash(error)
                 return p 
+#ประวัติพ่อ
+def get_fatherHistory(user_id):
+    error =None
+    dbConn = get_db()
+    cur =dbConn.cursor()
+    #select
+    cur.execute(
+      'select fatherhistoryid,optionhistoryfather,fatherbreastcheck ,fatherbreastyear ,fatherlivercheck ,fatherliveryear ,fathergutcheck ,'
+      ' fathergutyear ,fatherpostgrandcheck ,fatherpostgrandyear ,fatherskincheck  ,fatherskinyear ,created '
+      ' from father_history sh join a_user u on sh.fatherhistoryid = u.id '
+      ' where  u.id = %s order by fatherhistoryid DESC limit 1 ',(user_id,)
+    )
+    infos =cur.fetchall()
+    if not infos:
+      p = person.fatherHistory(
+        accountid = 0,
+        optionhistoryfather = 99 ,  # not select
+        fatherbreastCheck= 0,
+        fatherbreastyear= 0,
+        fatherliverCheck =0,
+        fatherliveryear =0,
+        fathergutCheck =0,
+        fathergutyear =0,
+        fatherpostGrandCheck =0,
+        fatherpostGrandyear =0,
+        fatherskinCheck=0,
+        fatherskinyear=0
+        )
+    else:
+      p = person.fatherHistory(
+        accountid = infos[0][0],
+        optionhistoryfather = infos[0][1] ,  # not select
+        fatherbreastCheck= infos[0][2],
+        fatherbreastyear= infos[0][3],
+        fatherliverCheck =infos[0][4],
+        fatherliveryear =infos[0][5],
+        fathergutCheck =infos[0][6],
+        fathergutyear =infos[0][7],
+        fatherpostGrandCheck =infos[0][8],
+        fatherpostGrandyear =infos[0][9],
+        fatherskinCheck=infos[0][10],
+        fatherskinyear=infos[0][11]
+        )
+    return p
+def insert_fatherHistory(user_id):
+      error=None
+      dbConn =get_db()
+      cur =dbConn.cursor()
+      p = person.fatherHistory(
+        accountid= int(user_id),
+        optionhistoryfather = int(request.form.get('optionhistoryfather')) if not (request.form.get('optionhistoryfather'))==None else 99,
+        fatherbreastCheck= int(request.form.get('fatherbreatCheck')) if not (request.form.get('fatherbreatCheck'))==None  else 0,
+        fatherbreastyear= int(request.form.get('fatherbreastyear')) if not (request.form.get('fatherbreastyear'))==''  else 0,
+        fatherliverCheck =int(request.form.get('fatherliverCheck')) if not (request.form.get('fatherliverCheck'))==None  else 0,
+        fatherliveryear =int(request.form.get('fatherliveryear')) if not (request.form.get('fatherliveryear'))=='' else 0,
+        fathergutCheck = int(request.form.get('fathergutCheck')) if not (request.form.get('fathergutCheck'))==None  else 0,
+        fathergutyear =int(request.form.get('fathergutyear')) if not (request.form.get('fathergutyear'))==''  else 0,
+        fatherpostGrandCheck = int(request.form.get('fatherpostGrandCheck')) if not (request.form.get('fatherpostGrandCheck'))==None  else 0,
+        fatherpostGrandyear =int(request.form.get('fartherpostGrandyear')) if not (request.form.get('fartherpostGrandyear'))=='' else 0,
+        fatherskinCheck= int(request.form.get('fatherskinCheck')) if not (request.form.get('fatherskinCheck'))==None  else 0,
+        fatherskinyear=int(request.form.get('fatherskinyear')) if not (request.form.get('fatherskinyear'))==''  else 0,
+      )
+      cur.execute(
+       'insert into father_history(fatherhistoryid,optionhistoryfather,fatherbreastcheck ,fatherbreastyear ,fatherlivercheck ,fatherliveryear ,fathergutcheck ,'
+       ' fathergutyear ,fatherpostgrandcheck ,fatherpostgrandyear ,fatherskincheck  ,fatherskinyear )'
+       ' values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) ',
+       ( p.accountid,p.optionhistoryfather,p.fatherbreatCheck,p.fatherbreastyear,p.fatherliverCheck,p.fatherliveryear,p.fathergutCheck,
+         p.fathergutyear,p.fatherpostGrandCheck,p.fatherpostGrandyear,p.fatherskinCheck,p.fatherskinyear
+       )
+    #   'insert into son_history(sonhistoryid) '
+    #   ' values(%s) ',
+    #  (p.accountid,)
+      )
+      if error is None:
+                dbConn.commit()
+                error = 'บันทึกประวัติพ่อ เรียบร้อย...' 
+                flash(error)
+                return p 

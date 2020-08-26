@@ -68,17 +68,17 @@ class daughterHistory:
         self.daughterskinyear =daughterskinyear
 #ประวัติพ่อ
 class fatherHistory:
-    def __init__(self,accountid,optionhistoryfather,fatherbreatCheck,fatherbreastyear,fatherliverCheck,fatherliveryear,fathergutCheck,fathergutyear,fatherpostGrandCheck,fartherpostGrandyear,fatherskinCheck,fatherskinyear):
+    def __init__(self,accountid,optionhistoryfather,fatherbreastCheck,fatherbreastyear,fatherliverCheck,fatherliveryear,fathergutCheck,fathergutyear,fatherpostGrandCheck,fatherpostGrandyear,fatherskinCheck,fatherskinyear):
         self.accountid =  accountid
         self.optionhistoryfather =optionhistoryfather
-        self.fatherbreatCheck =fatherbreatCheck
+        self.fatherbreatCheck =fatherbreastCheck
         self.fatherbreastyear = fatherbreastyear
         self.fatherliverCheck =fatherliverCheck
         self.fatherliveryear = fatherliveryear
         self.fathergutCheck = fathergutCheck
         self.fathergutyear = fathergutyear
         self.fatherpostGrandCheck = fatherpostGrandCheck
-        self.fartherpostGrandyear = fartherpostGrandyear
+        self.fatherpostGrandyear = fatherpostGrandyear
         self.fatherskinCheck = fatherskinCheck
         self.fatherskinyear = fatherskinyear
 #ประวัติแม่
