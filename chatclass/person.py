@@ -98,16 +98,16 @@ class motherHistory:
        self.motherskinyear = motherskinyear
 #ประวัติน้องชาย
 class brotherHistory:
-    def __init__(self,accountid,optionhistorylbrother,brotherbreastCheck,brotherbreastyear,brotherliverCheck,brotherliveryear,brothergutCheck,brothergutyear,broherpostGrandCheck,brotherpostGrandyear,brotherskinCheck,brotherskinyear):
+    def __init__(self,accountid,optionhistorybrother,brotherbreastCheck,brotherbreastyear,brotherliverCheck,brotherliveryear,brothergutCheck,brothergutyear,brotherpostGrandCheck,brotherpostGrandyear,brotherskinCheck,brotherskinyear):
        self.accountid = accountid
-       self.optionhistorylbrother = optionhistorylbrother
+       self.optionhistorybrother = optionhistorybrother
        self.brotherbreastCheck = brotherbreastCheck
        self.brotherbreastyear = brotherbreastyear
        self.brotherlivercheck = brotherliverCheck
        self.brotherliveryear =  brotherliveryear
        self.brothergutCheck = brothergutCheck
        self.brothergutyear = brothergutyear
-       self.brotherpostGrandCheck = broherpostGrandCheck
+       self.brotherpostGrandCheck = brotherpostGrandCheck
        self.brotherpostGrandyear =brotherpostGrandyear
        self.brotherskinCheck = brotherskinCheck
        self.brotherskinyear = brotherskinyear

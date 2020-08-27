@@ -83,7 +83,7 @@ FOREIGN KEY(motherHistoryId) REFERENCES a_user(id)
 CREATE TABLE  brother_history(
 id SERIAL PRIMARY KEY,
 brotherHistoryId INTEGER not NULL,
-optionhistorylbrother INTEGER , /* 0. ไม่เป็น  1.เป็น*/
+optionhistorybrother INTEGER , /* 0. ไม่เป็น  1.เป็น*/
 brotherbreastCheck INTEGER,
 brotherbreastyear INTEGER, /*ปีที่เป็นมะเร็งเต้านม*/
 --bovalCheck INTEGER,/*มะเร็งรังไข่ * 0 ไม่พบ 1 พบ*/

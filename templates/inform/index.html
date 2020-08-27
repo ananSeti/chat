@@ -252,7 +252,7 @@
                         </label>
                         <label>
                           <input type="checkbox" name="fatherpostGrandCheck"  value="1"{%if fh.fatherpostGrandCheck==1 %}checked{%endif%} >
-                          มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" name="fartherpostGrandyear" id="fartherpostGrandyear" value={{fh.fatherpostGrandyear}}>ปี
+                          มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" name="fatherpostGrandyear" id="fatherpostGrandyear" value={{fh.fatherpostGrandyear}}>ปี
                         </label>
                         <label>
                           <input type="checkbox" name="fatherskinCheck" value="1" {%if fh.fatherskinCheck==1 %}checked{%endif%}>
@@ -270,10 +270,10 @@
                     <div class="col-sx-6">ประวัติการตรวจพบมะเร็งในแม่</div>  
                   <div class="radio">
                   <label> 
-                      <input type="radio" name="optionhistorymother" id="opntionhistorymother1" value="0">ไม่พบ
+                      <input type="radio" name="optionhistorymother" id="opntionhistorymother1" value="0" {%if mh.optionhistorymother==0 %}checked{%endif%}>ไม่พบ
                   </label>
                   <label  >
-                    <input type="radio" name="optionhistorymother" id="opntionhistorymother2" value="1">พบ
+                    <input type="radio" name="optionhistorymother" id="opntionhistorymother2" value="1" {%if mh.optionhistorymother==1 %}checked{%endif%} >พบ
                 </label>
                   </div>
                 
@@ -285,24 +285,24 @@
                   <div class="well text-left">
                     <div class="checkbox">
                         <label>
-                          <input type="checkbox" name="motherbreastCheck" value="1">
-                          มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" name="motherbreatyear" id="motherbreatyear" value="">ปี
+                          <input type="checkbox" name="motherbreastCheck" value="1" {%if mh.motherbreastCheck==1 %}checked{%endif%} >
+                          มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" name="motherbreatyear" id="motherbreatyear" value={{mh.motherbreastyear}}>ปี
                         </label>
                         <label>
-                          <input type="checkbox" name="motherliverCheck" value="1">
-                          มะเร็งตับอ่อนอายุ <input type="number" class="form-control" name="motherliveryear" id="motherliveryear" value="">ปี
+                          <input type="checkbox" name="motherliverCheck" value="1"{%if mh.motherliverCheck==1 %}checked{%endif%} >
+                          มะเร็งตับอ่อนอายุ <input type="number" class="form-control" name="motherliveryear" id="motherliveryear" value={{mh.motherliveryear}}>ปี
                         </label>
                         <label>
-                          <input type="checkbox"  name="mothergutCheck" value="1">
-                          มะเร็งลำไส้อายุ <input type="number" class="form-control" name="mothergutyear" id="mothergutCheck" value="">ปี
+                          <input type="checkbox"  name="mothergutCheck" value="1" {%if mh.mothergutCheck==1 %}checked{%endif%}>
+                          มะเร็งลำไส้อายุ <input type="number" class="form-control" name="mothergutyear" id="mothergutCheck" value={{mh.mothergutyear}}>ปี
                         </label>
                         <label>
-                          <input type="checkbox" name="motherpostGrandCheck" value="1">
-                          มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" name="motherpostGrandyear" id="motherpostGrandyear" value="">ปี
+                          <input type="checkbox" name="motherpostGrandCheck" value="1" {%if mh.motherpostGrandCheckCheck==1 %}checked{%endif%}>
+                          มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" name="motherpostGrandyear" id="motherpostGrandyear" value={{mh.motherpostGrandyear}}>ปี
                         </label>
                         <label>
-                          <input type="checkbox" name="motherskinCheck" value="1">
-                          มะเร็งผิวหนัง <input type="number" class="form-control" name="motherskinyear" id="motherskinyear" value="" > ปี
+                          <input type="checkbox" name="motherskinCheck" value="1" {%if mh.motherskinCheck==1 %}checked{%endif%}>
+                          มะเร็งผิวหนัง <input type="number" class="form-control" name="motherskinyear" id="motherskinyear" value={{mh.motherskinyear}} > ปี
                         </label>
                     </div>
                 </div>
@@ -316,10 +316,10 @@
                   <div class="col-sx-6">ประวัติการตรวจพบมะเร็งใน พี่/น้อง(ชาย)</div>
                   <div class="radio">
                   <label> 
-                      <input type="radio" name="optionhistorylbrother" id="opntionhistorylbrother1" value="0">ไม่พบ
+                      <input type="radio" name="optionhistorylbrother" id="opntionhistorylbrother1" value="0" {%if broh.optionhistorybrother==0 %}checked{%endif%}>ไม่พบ
                   </label>
                   <label  >
-                    <input type="radio" name="optionhistorylbrother" id="opntionhistorylbrother2" value="1">พบ
+                    <input type="radio" name="optionhistorylbrother" id="opntionhistorylbrother2" value="1" {%if broh.optionhistorybrother==1 %}checked{%endif%}>พบ
                 </label>
                   </div>
                 
@@ -331,24 +331,24 @@
                   <div class="well text-left">
                     <div class="checkbox">
                         <label>
-                          <input type="checkbox" name="brotherbreastCheck" value="1">
-                          มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" name="brotherbreastyear" id="brotherbreastyear" value="">ปี
+                          <input type="checkbox" name="brotherbreastCheck" value="1" {%if broh.brotherbreastCheck==1 %}checked{%endif%}>
+                          มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" name="brotherbreastyear" id="brotherbreastyear" value={{broh.brotherbreasryear}}>ปี
                         </label>
                         <label>
-                          <input type="checkbox" name="brotherliverCheck" value="1">
-                          มะเร็งตับอ่อนอายุ <input type="number" class="form-control" name="brotherliveryear" id="brotherliveryear" value="" >ปี
+                          <input type="checkbox" name="brotherliverCheck" value="1" {%if broh.brotherlivertCheck==1 %}checked{%endif%}>
+                          มะเร็งตับอ่อนอายุ <input type="number" class="form-control" name="brotherliveryear" id="brotherliveryear" value={{broh.brotherbreastyear}} >ปี
                         </label>
                         <label>
-                          <input type="checkbox" name="brothergutCheck" value="1">
-                          มะเร็งลำไส้อายุ <input type="number" class="form-control" name="brothergutyear" id="brothergutyear" value="">ปี
+                          <input type="checkbox" name="brothergutCheck" value="1" {%if broh.brothergutCheck==1 %}checked{%endif%}>
+                          มะเร็งลำไส้อายุ <input type="number" class="form-control" name="brothergutyear" id="brothergutyear" value={{broh.brothergutyear}}>ปี
                         </label>
                         <label>
-                          <input type="checkbox" name="broherpostGrandCheck" value="1">
-                          มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" name="brotherpostGrandyear" id="brotherpostGrandyear" value="">ปี
+                          <input type="checkbox" name="broherpostGrandCheck" value="1" {%if broh.broherpostGrandCheck==1 %}checked{%endif%}>
+                          มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" name="brotherpostGrandyear" id="brotherpostGrandyear" value={{broh.brotherpostGrandyear}}>ปี
                         </label>
                         <label>
-                          <input type="checkbox" name="brotherskinCheck" value="1">
-                          มะเร็งผิวหนัง <input type="number" class="form-control" name="brotherskinyear" id="brotherskinyear" value="">ปี
+                          <input type="checkbox" name="brotherskinCheck" value="1" {%if broh.brotherskinCheck==1 %}checked{%endif%}>
+                          มะเร็งผิวหนัง <input type="number" class="form-control" name="brotherskinyear" id="brotherskinyear" value={{broh.brotherskinyear}}>ปี
                         </label>
                     </div>
                 </div>
@@ -362,10 +362,10 @@
                     <div class="col-sx-6"> ประวัติการตรวจพบมะเร็งใน พี่/น้อง(หญิง)</div>  
                   <div class="radio">
                   <label>
-                      <input type="radio" name="optionhistorylsisther" id="opntionhistorylsyster1" value="0">ไม่พบ
+                      <input type="radio" name="optionhistorylsisther" id="opntionhistorylsyster1" value="0"{%if sish.optionhistorylsisther==0 %}checked{%endif%}>ไม่พบ
                   </label>
                   <label  >
-                    <input type="radio" name="optionhistorylsisther" id="opntionhistorylsyster2" value="1">พบ
+                    <input type="radio" name="optionhistorylsisther" id="opntionhistorylsyster2" value="1"{%if sish.optionhistorylsisther==1 %}checked{%endif%} >พบ
                 </label>
                   </div>
                 
@@ -377,24 +377,24 @@
                   <div class="well text-left">
                     <div class="checkbox">
                         <label>
-                          <input type="checkbox" name="sisterbreastCheck" value="1">
-                          มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" name="sisterbreastyear" id="sisterbreastyear" value="">ปี
+                          <input type="checkbox" name="sisterbreastCheck" value="1" {%if sish.sisterbreastCheck==1 %}checked{%endif%} >
+                          มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" name="sisterbreastyear" id="sisterbreastyear" value={{sish.sisterbreastyear}}>ปี
                         </label>
                         <label>
-                          <input type="checkbox" name="sisterliverCheck" value="1">
-                          มะเร็งตับอ่อนอายุ <input type="number" class="form-control" name="sisterliveryear" id="sisterliveryear" value="">ปี
+                          <input type="checkbox" name="sisterliverCheck" value="1" {%if sish.sisterliverCheck==1 %}checked{%endif%}>
+                          มะเร็งตับอ่อนอายุ <input type="number" class="form-control" name="sisterliveryear" id="sisterliveryear" value={{sish.sisterliveryear}}>ปี
                         </label>
                         <label>
-                          <input type="checkbox" name="sistergutCheck" value="1">
-                          มะเร็งลำไส้อายุ <input type="number" class="form-control" name="sistergutyear" id="sistergutyear" value="" >ปี
+                          <input type="checkbox" name="sistergutCheck" value="1" {%if sish.sisterliverCheck==1 %}checked{%endif%}>
+                          มะเร็งลำไส้อายุ <input type="number" class="form-control" name="sistergutyear" id="sistergutyear" value={{sish.sistergutyear}} >ปี
                         </label>
                         <label>
-                          <input type="checkbox" name="sisterpostGrandCheck" value="1">
-                          มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" name="sisterpostGrandyear" id="sisterpostGrandyear" value="">ปี
+                          <input type="checkbox" name="sisterpostGrandCheck" value="1" {%if sish.sisterpostGrandCheck==1 %}checked{%endif%}>
+                          มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" name="sisterpostGrandyear" id="sisterpostGrandyear" value={{sish.sisterpostGrandyear}}>ปี
                         </label>
                         <label>
-                          <input type="checkbox" name="sisterskinCheck" value="1">
-                          มะเร็งผิวหนัง <input type="number" class="form-control" name="sisterskinyear" id="sisterskinyear" value="">ปี
+                          <input type="checkbox" name="sisterskinCheck" value="1" {%if sish.sisterskinCheck==1 %}checked{%endif%}>
+                          มะเร็งผิวหนัง <input type="number" class="form-control" name="sisterskinyear" id="sisterskinyear" value={{sish.sisterskinyear}}>ปี
                         </label>
                     </div>
                 </div>
