@@ -17,6 +17,6 @@ DROP TABLE IF EXISTS bigAunt_history;
 DROP TABLE IF EXISTS smallAunt_history;
 DROP TABLE IF EXISTS smallbro_history;
 DROP TABLE IF EXISTS mengrandChild_history;
-DROP TABLE IF EXISTS womandgrandChild_history;
+DROP TABLE IF EXISTS womengrandChild_history;
 DROP TABLE IF EXISTS thirdmengrandChild_history;
 DROP TABLE IF EXISTS  thirdwomangrandChild_history;

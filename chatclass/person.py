@@ -264,7 +264,7 @@ class smallAuntHistory:
 #ประวัติอา
 class smallbroHistory: 
     def __init__(self,accountid,optionhistorysmallbro,smallbrobreastCheck,smallbrobreastyear,smallbroliverCheck,smallbroliveryear,smallbrogutCheck,smallbrogutyear,smallbropostGrandCheck,smallbropostGrandyear,smallbroskinCheck,smallbroskinyear):
-        self.acoountid =accountid
+        self.accountid =accountid
         self.optionhistorysmallbro=optionhistorysmallbro
         self.smallbrobreastCheck=smallbrobreastCheck
         self.smallbrobreastyear = smallbrobreastyear
@@ -278,7 +278,7 @@ class smallbroHistory:
         self.smallbroskinyear =smallbroskinyear
 #ประวัติหลานชาย
 class mengrandChildHistory:
-    def __init__(self,accountid,optionhistorymengrandchild,mengrandChildbreastCheck,mengrandChildbreastyear,mengrandChildyear,mengrandChildliverCheck,mengrandChildliveryear,mengrandChildgutCheck,mengrandChildgutyear,mengrandChildpostGrandCheck,mengrandChildpostGrandyear,mengrandChildskinCheck,mengrandChildskinyear):
+    def __init__(self,accountid,optionhistorymengrandchild,mengrandChildbreastCheck,mengrandChildbreastyear,mengrandChildliverCheck,mengrandChildliveryear,mengrandChildgutCheck,mengrandChildgutyear,mengrandChildpostGrandCheck,mengrandChildpostGrandyear,mengrandChildskinCheck,mengrandChildskinyear):
         self.accountid =accountid
         self.optionhistorymengrandchild = optionhistorymengrandchild
         self.mengrandChildbreastCheck = mengrandChildbreastCheck

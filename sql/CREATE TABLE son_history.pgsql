@@ -325,14 +325,14 @@ id SERIAL PRIMARY KEY,
 mengrandChildHistoryId INTEGER not NULL,
 optionhistorymengrandchild INTEGER , /* 0. ไม่เป็น  1.เป็น*/
 mengrandChildbreastCheck INTEGER,
-mengrandChildyear INTEGER, /*ปีที่เป็นมะเร็งเต้านม*/
+mengrandChildbreastyear INTEGER, /*ปีที่เป็นมะเร็งเต้านม*/
 --bovalCheck INTEGER,/*มะเร็งรังไข่ * 0 ไม่พบ 1 พบ*/
 --bovalYear INTEGER,
 mengrandChildliverCheck INTEGER, /*มะเร็งตับอ่อน*/
 mengrandChildliveryear INTEGER, /*ปีที่เป็น*/
 mengrandChildgutCheck INTEGER,
 mengrandChildgutyear INTEGER,
-mengrandChildGrandCheck INTEGER, /*มะเร็งต่อมลูกหมาก*/
+mengrandChildpostGrandCheck INTEGER, /*มะเร็งต่อมลูกหมาก*/
 mengrandChildpostGrandyear INTEGER, /* ปีที่เป็น*/
 mengrandChildskinCheck  INTEGER, /*มะเร็งผิวหนัง */
 mengrandChildskinyear INTEGER, /*ปีที่เป็น */
@@ -340,24 +340,24 @@ created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 FOREIGN KEY(mengrandChildHistoryId) REFERENCES a_user(id) 
 ); 
 --ประวัติหลานสาว
-CREATE TABLE womangrandChild_history(
+CREATE TABLE womengrandChild_history(
 id SERIAL PRIMARY KEY,
-womangrandChildHistoryId INTEGER not NULL,
+womengrandChildHistoryId INTEGER not NULL,
 optionhistorywomengrandchild INTEGER , /* 0. ไม่เป็น  1.เป็น*/
 womengrandChildbreastCheck INTEGER,
-womengrandChildyear INTEGER, /*ปีที่เป็นมะเร็งเต้านม*/
+womengrandChildbreastyear INTEGER, /*ปีที่เป็นมะเร็งเต้านม*/
 --bovalCheck INTEGER,/*มะเร็งรังไข่ * 0 ไม่พบ 1 พบ*/
 --bovalYear INTEGER,
 womengrandChildliverCheck INTEGER, /*มะเร็งตับอ่อน*/
 womengrandChildliveryear INTEGER, /*ปีที่เป็น*/
 womengrandChildgutCheck INTEGER,
 womengrandChildgutyear INTEGER,
-womengrandChildGrandCheck INTEGER, /*มะเร็งต่อมลูกหมาก*/
+womengrandChildpostGrandCheck INTEGER, /*มะเร็งต่อมลูกหมาก*/
 womengrandChildpostGrandyear INTEGER, /* ปีที่เป็น*/
 womengrandChildskinCheck  INTEGER, /*มะเร็งผิวหนัง */
 womengrandChildskinyear INTEGER, /*ปีที่เป็น */
 created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-FOREIGN KEY(womangrandChildHistoryId) REFERENCES a_user(id) 
+FOREIGN KEY(womengrandChildHistoryId) REFERENCES a_user(id) 
 ); 
 --ประวัติเหลนชาย
 CREATE TABLE thirdmengrandChild_history(
