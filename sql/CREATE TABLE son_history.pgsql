@@ -144,18 +144,18 @@ CREATE TABLE womangrandMom_history(
 id SERIAL PRIMARY KEY,
 womangrandMomHistoryId INTEGER not NULL,
 optionhistorywomangrandmother INTEGER , /* 0. ไม่เป็น  1.เป็น*/
-womangrandMomCheck INTEGER,
-womangrandMomyear INTEGER, /*ปีที่เป็นมะเร็งเต้านม*/
+womangrandMombreastCheck INTEGER,
+womangrandMombreastyear INTEGER, /*ปีที่เป็นมะเร็งเต้านม*/
 --bovalCheck INTEGER,/*มะเร็งรังไข่ * 0 ไม่พบ 1 พบ*/
 --bovalYear INTEGER,
 womangrandMomliverCheck INTEGER, /*มะเร็งตับอ่อน*/
 womangrandMomliveryear INTEGER, /*ปีที่เป็น*/
-womandgrandgutCheck INTEGER,
-womangrandgutyear INTEGER,
-womangrandpostGrandCheck INTEGER, /*มะเร็งต่อมลูกหมาก*/
-womangrandpostGrandyear INTEGER, /* ปีที่เป็น*/
-womangrandskinCheck  INTEGER, /*มะเร็งผิวหนัง */
-womangrandskinyear INTEGER, /*ปีที่เป็น */
+womangrandMomgutCheck INTEGER,
+womangrandMomgutyear INTEGER,
+womangrandMompostGrandCheck INTEGER, /*มะเร็งต่อมลูกหมาก*/
+womangrandMompostGrandyear INTEGER, /* ปีที่เป็น*/
+womangrandMomskinCheck  INTEGER, /*มะเร็งผิวหนัง */
+womangrandMomskinyear INTEGER, /*ปีที่เป็น */
 created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 FOREIGN KEY(womangrandMomHistoryId) REFERENCES a_user(id) 
 ); 
@@ -168,13 +168,13 @@ grandFatherbreastCheck INTEGER,
 grandFatherbreastyear INTEGER, /*ปีที่เป็นมะเร็งเต้านม*/
 --bovalCheck INTEGER,/*มะเร็งรังไข่ * 0 ไม่พบ 1 พบ*/
 --bovalYear INTEGER,
-grandFartherliverCheck INTEGER, /*มะเร็งตับอ่อน*/
+grandFatherliverCheck INTEGER, /*มะเร็งตับอ่อน*/
 grandFatherliveryear INTEGER, /*ปีที่เป็น*/
 grandFathergutCheck INTEGER,
-granFathergutyear INTEGER,
+grandFathergutyear INTEGER,
 grandFatherpostgrandCheck INTEGER, /*มะเร็งต่อมลูกหมาก*/
 grandFatherpostGrandyear INTEGER, /* ปีที่เป็น*/
-grandFatherskinsCheck  INTEGER, /*มะเร็งผิวหนัง */
+grandFatherskinCheck  INTEGER, /*มะเร็งผิวหนัง */
 grandFatherskinyear INTEGER, /*ปีที่เป็น */
 created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 FOREIGN KEY(grandFatherHistoryId) REFERENCES a_user(id) 

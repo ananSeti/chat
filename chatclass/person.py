@@ -103,7 +103,7 @@ class brotherHistory:
        self.optionhistorybrother = optionhistorybrother
        self.brotherbreastCheck = brotherbreastCheck
        self.brotherbreastyear = brotherbreastyear
-       self.brotherlivercheck = brotherliverCheck
+       self.brotherliverCheck = brotherliverCheck
        self.brotherliveryear =  brotherliveryear
        self.brothergutCheck = brothergutCheck
        self.brothergutyear = brothergutyear
@@ -143,33 +143,33 @@ class mangrandFaHistory:
        self.mangrandFaskinyear =mangrandFaskinyear
 #ประวัติทวดหญิง
 class womangranMomHistory:
-    def __init__(self,accountid,optionhistorywomangrandmother,womangrandMomCheck,womangrandMomyear,womangrandliverCheck,womangrandliveryear,womangrandgutCheck,womangrandgutyear,womangrandpostGrandCheck,womangrandpostGrandyear,womangrandskinCheck,womangrandskinyear):
+    def __init__(self,accountid,optionhistorywomangrandmother,womangrandMombreastCheck,womangrandMombreastyear,womangrandMomliverCheck,womangrandMomliveryear,womangrandMomgutCheck,womangrandMomgutyear,womangrandMompostGrandCheck,womangrandMompostGrandyear,womangrandMomskinCheck,womangrandMomskinyear):
         self.accountid = accountid
         self.optionhistorywomangrandmother =optionhistorywomangrandmother
-        self.womangrandMomCheck =womangrandMomCheck
-        self.womangrandMomyear =womangrandMomyear
-        self.womangrandMomliverCheck = womangrandliverCheck
-        self.womangrandMomliveryear = womangrandliveryear
-        self.womandgrandgutCheck = womangrandgutCheck
-        self.womangrandgutyear = womangrandgutyear
-        self.womangrandpostGrandCheck =womangrandpostGrandCheck
-        self.womangrandpostGrandyear = womangrandpostGrandyear
-        self.womangrandskinCheck = womangrandskinCheck
-        self.womangrandskinyear = womangrandskinyear
+        self.womangrandMombreastCheck =womangrandMombreastCheck
+        self.womangrandMombreastyear =womangrandMombreastyear
+        self.womangrandMomliverCheck = womangrandMomliverCheck
+        self.womangrandMomliveryear = womangrandMomliveryear
+        self.womangrandMomgutCheck = womangrandMomgutCheck
+        self.womangrandMomgutyear = womangrandMomgutyear
+        self.womangrandMompostGrandCheck =womangrandMompostGrandCheck
+        self.womangrandMompostGrandyear = womangrandMompostGrandyear
+        self.womangrandsMomskinCheck = womangrandMomskinCheck
+        self.womangrandMomskinyear = womangrandMomskinyear
 #ประวัติปู่
 class grandFatherHistory:
-    def __init__(self,accountid,optionhistoryfgrandfather,grandFatherbreastCheck,grandFatherbreastyear,grandFatherliverCheck,grandFatherliveryear,grandFathergutCheck,grandFatherguyear,grandFatherpostGrandCheck,grandFatherpostGrandyear,grandFatherskinsCheck,grandFatherskinyear):
+    def __init__(self,accountid,optionhistorygrandfather,grandFatherbreastCheck,grandFatherbreastyear,grandFatherliverCheck,grandFatherliveryear,grandFathergutCheck,grandFathergutyear,grandFatherpostGrandCheck,grandFatherpostGrandyear,grandFatherskinCheck,grandFatherskinyear):
         self.accountid = accountid
-        self.optionhistorygrandfather = optionhistoryfgrandfather
+        self.optionhistorygrandfather = optionhistorygrandfather
         self.grandFatherbreastCheck =grandFatherbreastCheck
         self.grandFatherbreastyear =grandFatherbreastyear
         self.grandFartherliverCheck =grandFatherliverCheck
         self.grandFatherliveryear = grandFatherliveryear
         self.grandFathergutCheck = grandFathergutCheck
-        self.granFathergutyear = grandFatherguyear
+        self.grandFathergutyear = grandFathergutyear
         self.grandFatherpostgrandCheck =grandFatherpostGrandCheck
         self.grandFatherpostGrandyear =grandFatherpostGrandyear
-        self.grandFatherskinsCheck =grandFatherskinsCheck
+        self.grandFatherskinCheck =grandFatherskinCheck
         self.grandFatherskinyear = grandFatherskinyear
 #ประวัติย่า
 class grandMomHistory:

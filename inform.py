@@ -107,14 +107,19 @@ def index():
     #ประวัติการตรวจในพี่/น้อง(หญิง)
     sish = history_related.get_sisterHistory(user_id)
     #ประวัติการตรวจในทวด(ชาย)
-    #ประวัติการตรวจในทวก(หญิง)
-    #ประวัติการตวจในปู่
+    mgfh =history_related.get_mangrandfaHistory(user_id)
+    #ประวัติการตรวจในทวด(หญิง)
+    mgmh = history_related.get_womangrandMomHistory(user_id)
+    #ประวัติการตรวจในปู่
+    gfh = history_related.get_grandFatherHistory(user_id)
     #ประวัติการตรวจในย่า
+    gmh =history_related.get_grandMomHistory(user_id)
     #ประวัติการตรวจในตา
+    fomh =history_related.get_fatherOfMomHistory(user_id)
     #ประวัติการตรวจในยาย
-    #ประวัติการตีรวจในลุง
+    #ประวัติการตรวจในลุง
     #ประวัติการตรวจในป้า
-    #ประวัติการตาวจในน้า
+    #ประวัติการตรวจในน้า
     #ประวัติการตรวจในอา
     #ประวัติการตรวจในหลาน(ชาย)
     #ประวัติกสนตรวจในหลาน(หญิง)
@@ -188,9 +193,20 @@ def index():
             broh =history_related.insert_brotherHistory(user_id)
             #บันทึกประวัติน้องสาว
             sish = history_related.insert_sisterHistory(user_id)
+            #บันทึกประวัติทวดชาย
+            mgfh = history_related.insert_mangrandfaHistory(user_id)
+            #บันทุกประวัติทวดหญิง
+            mgmh = history_related.insert_womangrandMomHistory(user_id)
+            #บันทึกประวัติปู่
+            gfh = history_related.insert_grandFatherHistory(user_id)   
+            #บันทึกประวัติย่า
+            gmh = history_related.insert_grandMomHistory(user_id)
+            #ประวัติตา
+            fomh = history_related.insert_fatherOfMomHistory(user_id
+            ) 
             return render_template('inform/index.html',p=p,ph=ph,sonh=sonh,dah=dah,fh=fh,mh=mh,
-                                   broh=broh,sish=sish)
+                                   broh=broh,sish=sish,mgfh=mgfh,mgmh=mgmh,gfh=gfh,gmh=gmh,fomh=fomh)
     if error is not None:
         flash(error) 
     return render_template('inform/index.html',p=p,ph=ph,sonh=sonh,dah=dah,fh=fh,mh=mh,
-                     broh=broh,sish=sish)
+                     broh=broh,sish=sish,mgfh=mgfh,mgmh=mgmh,gfh=gfh,gmh=gmh,fomh=fomh)
