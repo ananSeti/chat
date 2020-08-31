@@ -117,9 +117,13 @@ def index():
     #ประวัติการตรวจในตา
     fomh =history_related.get_fatherOfMomHistory(user_id)
     #ประวัติการตรวจในยาย
+    momh =history_related.get_motherOfMomHistory(user_id)
     #ประวัติการตรวจในลุง
+    bunh = history_related.get_bigUncleHistory(user_id)
     #ประวัติการตรวจในป้า
+    bauh =history_related.get_bigAuntHistory(user_id)
     #ประวัติการตรวจในน้า
+    sauh =history_related.get_smallAuntHistory(user_id)
     #ประวัติการตรวจในอา
     #ประวัติการตรวจในหลาน(ชาย)
     #ประวัติกสนตรวจในหลาน(หญิง)
@@ -202,11 +206,21 @@ def index():
             #บันทึกประวัติย่า
             gmh = history_related.insert_grandMomHistory(user_id)
             #ประวัติตา
-            fomh = history_related.insert_fatherOfMomHistory(user_id
-            ) 
+            fomh = history_related.insert_fatherOfMomHistory(user_id)
+            #ประวัติยาย
+            momh =history_related.insert_motherOfMomHistory(user_id)
+            #ประวัติลุง
+            bunh =history_related.insert_bigUncleHistory(user_id)
+            #ประวัติป้า
+            bauh =history_related.insert_bigAuntHistory(user_id)
+            #ประวัติน้า
+            sauh = history_related.insert_smallAuntHistory(user_id)
+
             return render_template('inform/index.html',p=p,ph=ph,sonh=sonh,dah=dah,fh=fh,mh=mh,
-                                   broh=broh,sish=sish,mgfh=mgfh,mgmh=mgmh,gfh=gfh,gmh=gmh,fomh=fomh)
+                                   broh=broh,sish=sish,mgfh=mgfh,mgmh=mgmh,gfh=gfh,gmh=gmh,fomh=fomh,momh=momh,
+                                  bunh=bunh,bauh=bauh,sauh=sauh)
     if error is not None:
         flash(error) 
     return render_template('inform/index.html',p=p,ph=ph,sonh=sonh,dah=dah,fh=fh,mh=mh,
-                     broh=broh,sish=sish,mgfh=mgfh,mgmh=mgmh,gfh=gfh,gmh=gmh,fomh=fomh)
+                     broh=broh,sish=sish,mgfh=mgfh,mgmh=mgmh,gfh=gfh,gmh=gmh,fomh=fomh,momh=momh,
+                     bunh=bunh,bauh=bauh,sauh=sauh)

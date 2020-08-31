@@ -222,8 +222,8 @@ FOREIGN KEY(fatherOfMomHistoryId) REFERENCES a_user(id)
  --ประวัติยาย
 CREATE TABLE motherOfMom_history(
 id SERIAL PRIMARY KEY,
-mohterOfMomHistoryId INTEGER not NULL,
-optonhistorymothermom INTEGER , /* 0. ไม่เป็น  1.เป็น*/
+motherOfMomHistoryId INTEGER not NULL,
+optionhistorymothermom INTEGER , /* 0. ไม่เป็น  1.เป็น*/
 motherOfMombreastCheck INTEGER,
 motherOfMombreastyear INTEGER, /*ปีที่เป็นมะเร็งเต้านม*/
 --bovalCheck INTEGER,/*มะเร็งรังไข่ * 0 ไม่พบ 1 พบ*/
@@ -237,7 +237,7 @@ motherOfMompostGrandyear INTEGER, /* ปีที่เป็น*/
 motherOfMomskinCheck  INTEGER, /*มะเร็งผิวหนัง */
 motherOfMomskinyear INTEGER, /*ปีที่เป็น */
 created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-FOREIGN KEY(mohterOfMomHistoryId) REFERENCES a_user(id) 
+FOREIGN KEY(motherOfMomHistoryId) REFERENCES a_user(id) 
 ); 
 -- ประวัติลุง
 CREATE TABLE bigUncle_history(
@@ -253,7 +253,7 @@ biguncleliveryear INTEGER, /*ปีที่เป็น*/
 bigunclegutCheck INTEGER,
 bigunclegutyear INTEGER,
 bigunclepostGrandCheck INTEGER, /*มะเร็งต่อมลูกหมาก*/
-bigunclepsotGrandyear INTEGER, /* ปีที่เป็น*/
+bigunclepostGrandyear INTEGER, /* ปีที่เป็น*/
 biguncleskinCheck  INTEGER, /*มะเร็งผิวหนัง */
 biguncleskinyear INTEGER, /*ปีที่เป็น */
 created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -263,9 +263,9 @@ FOREIGN KEY(bigUncleHistoryId) REFERENCES a_user(id)
 CREATE TABLE bigAunt_history(
 id SERIAL PRIMARY KEY,
 bigAuntHistoryId INTEGER not NULL,
-optionhistorybiguncle INTEGER , /* 0. ไม่เป็น  1.เป็น*/
-bigauntbreastyear INTEGER,
-bigunclebreastyear INTEGER, /*ปีที่เป็นมะเร็งเต้านม*/
+optionhistorybigaunt INTEGER , /* 0. ไม่เป็น  1.เป็น*/
+bigauntbreastCheck INTEGER,
+bigauntbreastyear INTEGER, /*ปีที่เป็นมะเร็งเต้านม*/
 --bovalCheck INTEGER,/*มะเร็งรังไข่ * 0 ไม่พบ 1 พบ*/
 --bovalYear INTEGER,
 bigauntliverCheck INTEGER, /*มะเร็งตับอ่อน*/

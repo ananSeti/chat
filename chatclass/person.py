@@ -205,7 +205,7 @@ class fatherOfMomHistory:
 class motherOfMomHistory:
     def __init__(self,accountid,optionhistorymothermom,motherOfMombreastCheck,motherOfMombreastyear,motherOfMomliverCheck,motherOfMomliveryear,motherOfMomgutCheck,motherOfMomgutyear,motherOfMompostGrandCheck,motherOfMompostGrandyear,motherOfMomskinCheck,motherOfMomskinyear):
        self.accountid = accountid
-       self.optonhistorymothermom =optionhistorymothermom
+       self.optionhistorymothermom =optionhistorymothermom
        self.motherOfMombreastCheck =motherOfMombreastCheck
        self.motherOfMombreastyear =motherOfMombreastyear
        self.motherOfMomliverCheck =motherOfMomliverCheck
@@ -228,14 +228,14 @@ class bigUncleHistory:
         self.bigunclegutCheck =bigunclegutCheck
         self.bigunclegutyear =bigunclegutyear
         self.bigunclepostGrandCheck = bigunclepostGrandCheck
-        self.bigunclepsotGrandyear =  bigunclepostGrandyear
+        self.bigunclepostGrandyear =  bigunclepostGrandyear
         self.biguncleskinCheck =biguncleskinCheck
         self.biguncleskinyear =biguncleskinyear
 #ประวัติป้า
 class bigAuntHistory:
     def __init__(self,accountid,optionhistorybigaunt,bigauntbreastCheck,bigauntbreastyear,bigauntliverCheck,bigauntliveryear,bigauntgutCheck,bigauntgutyear,bigauntpostGrandCheck,bigauntpostGrandyear,bigauntskinCheck,bigauntskinyear):
         self.accountid = accountid
-        self.optionhistorybiguncle =optionhistorybigaunt
+        self.optionhistorybigaunt =optionhistorybigaunt
         self.bigauntbreastCheck =bigauntbreastCheck
         self.bigauntbreastyear = bigauntbreastyear
         self.bigauntliverCheck = bigauntliverCheck
@@ -255,7 +255,7 @@ class smallAuntHistory:
         self.smallauntbreastyear = smallauntbreastyear
         self.smallauntliverCheck = smallauntliverCheck
         self.smallauntliveryear = smallauntliveryear
-        self,smallauntgutCheck =smallauntgutCheck
+        self.smallauntgutCheck = smallauntgutCheck
         self.smallauntgutyear =smallauntgutyear
         self.smallauntpostGrandCheck =smallauntpostGrandCheck
         self.smallautpostGrandyear =smallauntpostGrandyear
