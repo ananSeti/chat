@@ -2,8 +2,8 @@ from flask import(
     Blueprint,flash,g,redirect,render_template,session,request,url_for
 )
 from werkzeug.exceptions import abort
-from chat.db import get_db
-from chat.chatclass import person
+from   chat.db import get_db
+from   chat.chatclass import person
 
 #ประวัติลูกชาย
 def get_sonHistory(user_id):
