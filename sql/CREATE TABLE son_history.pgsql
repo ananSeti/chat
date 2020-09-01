@@ -365,14 +365,14 @@ id SERIAL PRIMARY KEY,
 thirdmengrandChildHistoryId INTEGER not NULL,
 optionhistorythirdmengrandchild INTEGER , /* 0. ไม่เป็น  1.เป็น*/
 thirdmengrandChildbreastCheck INTEGER,
-thirdmengrandChildyear INTEGER, /*ปีที่เป็นมะเร็งเต้านม*/
+thirdmengrandChildbreastyear INTEGER, /*ปีที่เป็นมะเร็งเต้านม*/
 --bovalCheck INTEGER,/*มะเร็งรังไข่ * 0 ไม่พบ 1 พบ*/
 --bovalYear INTEGER,
 thirdmengrandChildliverCheck INTEGER, /*มะเร็งตับอ่อน*/
 thirdmengrandChildliveryear INTEGER, /*ปีที่เป็น*/
 thirdmengrandChildgutCheck INTEGER,
 thirdmengrandChildgutyear INTEGER,
-thirdmengrandChildGrandCheck INTEGER, /*มะเร็งต่อมลูกหมาก*/
+thirdmengrandChildpostGrandCheck INTEGER, /*มะเร็งต่อมลูกหมาก*/
 thirdmengrandChildpostGrandyear INTEGER, /* ปีที่เป็น*/
 thirdmengrandChildskinCheck  INTEGER, /*มะเร็งผิวหนัง */
 thirdmengrandChildskinyear INTEGER, /*ปีที่เป็น */
@@ -385,14 +385,14 @@ id SERIAL PRIMARY KEY,
 thirdwomangrandChildHistoryId INTEGER not NULL,
 optionhistorythirdwomangrandchild INTEGER , /* 0. ไม่เป็น  1.เป็น*/
 thirdwomangrandChildbreastCheck INTEGER,
-thirdwomangrandChildyear INTEGER, /*ปีที่เป็นมะเร็งเต้านม*/
+thirdwomangrandChildbreastyear INTEGER, /*ปีที่เป็นมะเร็งเต้านม*/
 --bovalCheck INTEGER,/*มะเร็งรังไข่ * 0 ไม่พบ 1 พบ*/
 --bovalYear INTEGER,
 thirdwomangrandChildliverCheck INTEGER, /*มะเร็งตับอ่อน*/
 thirdwomangrandChildliveryear INTEGER, /*ปีที่เป็น*/
 thirdwomangrandChildgutCheck INTEGER,
 thirdwomangrandChildgutyear INTEGER,
-thirdwomangrandChildGrandCheck INTEGER, /*มะเร็งต่อมลูกหมาก*/
+thirdwomangrandChildpostGrandCheck INTEGER, /*มะเร็งต่อมลูกหมาก*/
 thirdwomangrandChildpostGrandyear INTEGER, /* ปีที่เป็น*/
 thirdwomangrandChildskinCheck  INTEGER, /*มะเร็งผิวหนัง */
 thirdwomangrandChildskinyear INTEGER, /*ปีที่เป็น */

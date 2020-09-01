@@ -408,10 +408,10 @@
                   <div class="col-sx-6">ประวัติการตรวจพบมะเร็งใน ทวด(ชาย)</div>   
                 <div class="radio">
                 <label> 
-                    <input type="radio" name="optionhistorygrandfather" id="opntionhistorygrandfather1" value="0"{%if mgfh.optionhistorymangrandfather==0 %}checked{%endif%}>ไม่พบ
+                    <input type="radio" name="optionhistorymangrandfather" id="opntionhistorygrandfather1" value="0"{%if mgfh.optionhistorymangrandfather == 0 %}checked{%endif%}>ไม่พบ
                 </label>
                 <label  >
-                  <input type="radio" name="optionhistorygrandfather" id="opntionhistorygrandfather2" value="1" {%if mgfh.optionhistorymangrandfather==1 %}checked{%endif%}> พบ
+                  <input type="radio" name="optionhistorymangrandfather" id="opntionhistorygrandfather2" value="1" {%if mgfh.optionhistorymangrandfather == 1 %}checked{%endif%}> พบ
               </label>
                 </div>
               
@@ -960,10 +960,10 @@
                   <div class="col-sx-6">ประวัติการตรวจพบมะเร็งในเหลน(ชาย)</div>  
                 <div class="radio">
                 <label> 
-                    <input type="radio" name="optionhistorythirdmengrandchild" id="opntionhistorythirdmengrandchild1" value="0">ไม่พบ
+                    <input type="radio" name="optionhistorythirdmengrandchild" id="opntionhistorythirdmengrandchild1" value="0" {%if thgch.optionhistorythirdmengrandchild== 0 %}checked{%endif%}>ไม่พบ
                 </label>
                 <label  >
-                  <input type="radio" name="optionhistorythirdmengrandchild" id="opntionhistorythirdmengrandchild2" value="1">พบ
+                  <input type="radio" name="optionhistorythirdmengrandchild" id="opntionhistorythirdmengrandchild2" value="1" {%if thgch.optionhistorythirdmengrandchild== 1 %}checked{%endif%}>พบ
               </label>
                 </div>
               
@@ -975,24 +975,24 @@
                 <div class="well text-left">
                   <div class="checkbox">
                       <label>
-                        <input type="checkbox" name="thirdmengrandchildbreastCheck" value="1">
-                        มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" name="thirdmengrandchildbreastyear" id="thirdmengrandchildbreastyear" value="">ปี
+                        <input type="checkbox" name="thirdmengrandchildbreastCheck" value="1" {%if thgch.thirdmengrandchildbreastCheck== 1 %}checked{%endif%}>
+                        มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" name="thirdmengrandchildbreastyear" id="thirdmengrandchildbreastyear" value={{thgch.thirdmengrandchildbreastyear}}>ปี
                       </label>
                       <label>
-                        <input type="checkbox" name="thirdmengrandchildliverCheck" value="1">
-                        มะเร็งตับอ่อนอายุ <input type="number" class="form-control" name="thirdmengrandchildliveryear" id="thirdmengrandchildliveryear" value="">ปี
+                        <input type="checkbox" name="thirdmengrandchildliverCheck" value="1" {%if thgch.thirdmengrandchildliverCheck== 1 %}checked{%endif%}>
+                        มะเร็งตับอ่อนอายุ <input type="number" class="form-control" name="thirdmengrandchildliveryear" id="thirdmengrandchildliveryear" value={{thgch.thirdmengrandchildliveryear}}>ปี
                       </label>
                       <label>
-                        <input type="checkbox" name="thirdmengrandchildgutCheck" value="1">
-                        มะเร็งลำไส้อายุ <input type="number" class="form-control" name="thirdmengrandchildgutyear" id="thirdmengrandchildgutyear" value="">ปี
+                        <input type="checkbox" name="thirdmengrandchildgutCheck" value="1" {%if thgch.thirdmengrandchildgutCheck== 1 %}checked{%endif%}>
+                        มะเร็งลำไส้อายุ <input type="number" class="form-control" name="thirdmengrandchildgutyear" id="thirdmengrandchildgutyear" value={{thgch.thirdmengrandchildgutyear}}>ปี
                       </label>
                       <label>
-                        <input type="checkbox" name="thirdmengrandchildpostGrandCheck" value="1">
-                        มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" name="thirdmengrandchildpostGrandyear" id="thirdmengrandchildpostGrandyear" value="">ปี
+                        <input type="checkbox" name="thirdmengrandchildpostGrandCheck" value="1" {%if thgch.thirdmengrandchildpostGrandCheck== 1 %}checked{%endif%}>
+                        มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" name="thirdmengrandchildpostGrandyear" id="thirdmengrandchildpostGrandyear" value={{thgch.thirdmengrandchildpostGrandyear}}>ปี
                       </label>
                       <label>
-                        <input type="checkbox" name="thirdmengrandchildskinCheck" value="1">
-                        มะเร็งผิวหนัง <input type="number" class="form-control" name="thirdmengrandchildskinyear" id="thirdmengrandchildskinyear" value="" >ปี
+                        <input type="checkbox" name="thirdmengrandchildskinCheck" value="1" {%if thgch.thirdmengrandchildskinCheck== 1 %}checked{%endif%} >
+                        มะเร็งผิวหนัง <input type="number" class="form-control" name="thirdmengrandchildskinyear" id="thirdmengrandchildskinyear" value={{thgch.thirdmengrandchildskinyear}} >ปี
                       </label>
                   </div>
               </div>
@@ -1006,10 +1006,10 @@
                   <div class="col-sx-6">ประวัติการตรวจพบมะเร็งในเหลน(หญิง)</div>  
                 <div class="radio">
                 <label> 
-                    <input type="radio" name="optionhistorythirdwomangrandchild" id="opntionhistorythirdwomangrandchild1" value="0">ไม่พบ
+                    <input type="radio" name="optionhistorythirdwomangrandchild" id="opntionhistorythirdwomangrandchild1" value="0" {%if twgch.optionhistorythirdwomangrandchild== 0 %}checked{%endif%}>ไม่พบ
                 </label>
                 <label  >
-                  <input type="radio" name="optionhistorythirdwomangrandchild" id="opntionhistorythirdwomangrandchild2" value="1">พบ
+                  <input type="radio" name="optionhistorythirdwomangrandchild" id="opntionhistorythirdwomangrandchild2" value="1" {%if twgch.optionhistorythirdwomangrandchild== 1 %}checked{%endif%} >พบ
               </label>
                 </div>
               
@@ -1021,24 +1021,24 @@
                 <div class="well text-left">
                   <div class="checkbox">
                       <label>
-                        <input type="checkbox" name="thirdwomangrandchildbreastCheck" value="1">
-                        มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" name="thirdwomangrandchildbreastyear" id="thirdwomangrandchildbreastyear" value="" >ปี
+                        <input type="checkbox" name="thirdwomangrandchildbreastCheck" value="1" {%if twgch.thirdwomangrandchildbreastCheck== 1 %}checked{%endif%}>
+                        มะเร็งเต้านมอายุ <input type="number" class="form-control" maxlength="2" name="thirdwomangrandchildbreastyear" id="thirdwomangrandchildbreastyear" value={{twgch.thirdwomangrandchildbreastyear}} >ปี
                       </label>
                       <label>
-                        <input type="checkbox" name="thirdwomangrandchildliverCheck" value="1">
-                        มะเร็งตับอ่อนอายุ <input type="number" class="form-control" name="thirdwomangrandchildliveryear" id="thirdwomangrandchildliveryear" value="">ปี
+                        <input type="checkbox" name="thirdwomangrandchildliverCheck" value="1" {%if twgch.thirdwomangrandchildliverCheck== 1 %}checked{%endif%} >
+                        มะเร็งตับอ่อนอายุ <input type="number" class="form-control" name="thirdwomangrandchildliveryear" id="thirdwomangrandchildliveryear" value= {{twgch.thirdwomangrandchildliveryear}}>ปี
                       </label>
                       <label>
-                        <input type="checkbox" name="thirdwomangrandchildgutCheck" value="1">
-                        มะเร็งลำไส้อายุ <input type="number" class="form-control" name="thirdwomangrandchildgutyear" id="thirdwomangrandchildgutyear" value="">ปี
+                        <input type="checkbox" name="thirdwomangrandchildgutCheck" value="1" {%if twgch.thirdwomangrandchildgutCheck== 1 %}checked{%endif%} >
+                        มะเร็งลำไส้อายุ <input type="number" class="form-control" name="thirdwomangrandchildgutyear" id="thirdwomangrandchildgutyear" value={{twgch.thirdwomangrandchildgutyear}}>ปี
                       </label>
                       <label>
-                        <input type="checkbox" name="thirdwomangrandchildpostGrandCheck" value="1">
-                        มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" name="thirdwomangrandchildpostGrandyear" id="thirdwomangrandchildpostGrandyear" value="">ปี
+                        <input type="checkbox" name="thirdwomangrandchildpostGrandCheck" value="1" {%if twgch.thirdwomangrandchildpostGrandCheck== 1 %}checked{%endif%} >
+                        มะเร็งต่อมลูกหมากอายุ  <input type="number" class="form-control" name="thirdwomangrandchildpostGrandyear" id="thirdwomangrandchildpostGrandyear" value={{twgch.thirdwomangrandchildpostGrandyear}}>ปี
                       </label>
                       <label>
-                        <input type="checkbox" name="thirdwomangrandchildskinCheck" value="1">
-                        มะเร็งผิวหนัง <input type="number" class="form-control" name="thirdwomangrandchildskinyear" id="thirdwomangrandchildskinyear" value="">ปี
+                        <input type="checkbox" name="thirdwomangrandchildskinCheck" value="1" {%if twgch.thirdwomangrandchildskinCheck== 1 %}checked{%endif%} >
+                        มะเร็งผิวหนัง <input type="number" class="form-control" name="thirdwomangrandchildskinyear" id="thirdwomangrandchildskinyear" value={{twgch.thirdwomangrandchildskinyear}}>ปี
                       </label>
                   </div>
               </div>

@@ -131,8 +131,9 @@ def index():
     #ประวัติการตรวจในหลาน(หญิง)
     wgch =history_related.get_womengrandChildHistoty(user_id)
     #ประวัติการตรวจในเหลน(ชาย)
+    thgch =history_related.get_thirdmengrandChildHistory(user_id)
     #ประวัติการตรวจในเหลน(หญิง)
-    
+    twgch =history_related.get_thirdwomendgrandChildHistoty(user_id)
     if request.method=='POST':
             p =  person.personinfo(
                     accountid = user_id,
@@ -224,12 +225,16 @@ def index():
             mgch = history_related.insert_mengrandChildHistory(user_id)
             #ประวัติหลานสาว
             wgch = history_related.insert_womengrandChildHistoty(user_id)
+            #ประวัติเหลนชาย
+            thgch =history_related.insert_thirdmengrandChildHistory(user_id)
+            #ประวัติเหลนสาว
+            twgch =history_related.insert_thirdwomendgrandChildHistoty(user_id)
 
             return render_template('inform/index.html',p=p,ph=ph,sonh=sonh,dah=dah,fh=fh,mh=mh,
                                    broh=broh,sish=sish,mgfh=mgfh,mgmh=mgmh,gfh=gfh,gmh=gmh,fomh=fomh,momh=momh,
-                                  bunh=bunh,bauh=bauh,sauh=sauh,smbh=smbh,mgch=mgch,wgch=wgch)
+                                  bunh=bunh,bauh=bauh,sauh=sauh,smbh=smbh,mgch=mgch,wgch=wgch,thgch=thgch,twgch=twgch)
     if error is not None:
         flash(error) 
     return render_template('inform/index.html',p=p,ph=ph,sonh=sonh,dah=dah,fh=fh,mh=mh,
                      broh=broh,sish=sish,mgfh=mgfh,mgmh=mgmh,gfh=gfh,gmh=gmh,fomh=fomh,momh=momh,
-                     bunh=bunh,bauh=bauh,sauh=sauh,smbh=smbh,mgch=mgch,wgch=wgch)
+                     bunh=bunh,bauh=bauh,sauh=sauh,smbh=smbh,mgch=mgch,wgch=wgch,thgch=thgch,twgch=twgch)

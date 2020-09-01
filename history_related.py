@@ -525,7 +525,7 @@ def insert_mangrandfaHistory(user_id):
       cur =dbConn.cursor()
       p = person.mangrandFaHistory(
         accountid= int(user_id),
-        optionhistorymangrandfather = int(request.form.get('optionhistorygrandfather')) if not (request.form.get('optionhistorygrandfather'))==None else 99,
+        optionhistorymangrandfather = int(request.form.get('optionhistorymangrandfather')) if not (request.form.get('optionhistorymangrandfather'))==None else 99,
         mangrandFabreastCheck= int(request.form.get('mangrandFabreastCheck')) if not (request.form.get('mangrandFabreastCheck'))==None  else 0,
         mangrandFabreastyear= int(request.form.get('mangrandFabreastyear')) if not (request.form.get('mangrandFabreastyear'))==None  else 0,
         mangrandFaliverCheck =int(request.form.get('mangrandFaliverCheck')) if not (request.form.get('mangrandFaliverCheck'))==None  else 0,
@@ -541,7 +541,7 @@ def insert_mangrandfaHistory(user_id):
        'insert into mangrandfa_history(mangrandfahistoryid,optionhistorymangrandfather,mangrandfabreastcheck ,mangrandfabreastyear ,mangrandfalivercheck ,mangrandfaliveryear ,mangrandfagutcheck ,'
        ' mangrandfagutyear ,mangrandfapostgrandcheck ,mangrandfapostgrandyear ,mangrandfaskincheck  ,mangrandfaskinyear )'
        ' values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) ',
-       ( p.accountid,p.optionhistorymangrandfather,p.mangrandFagutCheck,p.mangrandFabreastyear,p.mangrandFaliverCheck,p.mangrandFaliveryear,p.mangrandFagutCheck,
+       ( p.accountid,p.optionhistorymangrandfather,p.mangrandFabreastCheck,p.mangrandFabreastyear,p.mangrandFaliverCheck,p.mangrandFaliveryear,p.mangrandFagutCheck,
          p.mangrandFagutyear,p.mangrandFapostGrandCheck,p.mangrandFapostGrandyear,p.mangrandFaskinCheck,p.mangrandFaskinyear
        )
     #   'insert into son_history(sonhistoryid) '
@@ -1413,5 +1413,163 @@ def insert_womengrandChildHistoty(user_id):
       if error is None:
                 dbConn.commit()
                 error = 'บันทึกประวัติหลานสาว  เรียบร้อย...' 
+                flash(error)
+                return p
+#ประวัติเหลนชาย
+def get_thirdmengrandChildHistory(user_id):
+    error =None
+    dbConn = get_db()
+    cur =dbConn.cursor()
+    #select
+    cur.execute(
+      'select thirdmengrandchildhistoryid,optionhistorythirdmengrandchild,thirdmengrandchildbreastcheck ,thirdmengrandchildbreastyear ,thirdmengrandchildlivercheck ,thirdmengrandchildliveryear ,thirdmengrandchildgutcheck ,'
+      ' thirdmengrandchildgutyear ,thirdmengrandchildpostgrandcheck ,thirdmengrandchildpostgrandyear ,thirdmengrandchildskincheck  ,thirdmengrandchildskinyear ,created ,sh.id'
+      ' from thirdmengrandchild_history sh join a_user u on sh.thirdmengrandchildhistoryid = u.id '
+      ' where  u.id = %s order by sh.id DESC limit 1 ',(user_id,)
+    )
+    infos =cur.fetchall()
+    if not infos:
+      p = person.thirdmengrandChildHistory(
+        accountid = 0,
+        optionhistorythirdmengrandchild = 99 ,  # not select
+        thirdmengrandchildbreastCheck= 0,
+        thirdmengrandchildbreastyear= 0,
+        thirdmengrandchildliverCheck =0,
+        thirdmengrandchildliveryear =0,
+        thirdmengrandchildgutCheck =0,
+        thirdmengrandchildgutyear =0,
+        thirdmengrandchildpostGrandCheck =0,
+        thirdmengrandchildpostGrandyear =0,
+        thirdmengrandchildskinCheck=0,
+        thirdmengrandchildskinyear=0
+        )
+    else:
+      p = person.thirdmengrandChildHistory(
+        accountid = infos[0][0],
+        optionhistorythirdmengrandchild = infos[0][1] ,  # not select
+        thirdmengrandchildbreastCheck= infos[0][2],
+        thirdmengrandchildbreastyear= infos[0][3],
+        thirdmengrandchildliverCheck =infos[0][4],
+        thirdmengrandchildliveryear =infos[0][5],
+        thirdmengrandchildgutCheck =infos[0][6],
+        thirdmengrandchildgutyear =infos[0][7],
+        thirdmengrandchildpostGrandCheck =infos[0][8],
+        thirdmengrandchildpostGrandyear =infos[0][9],
+        thirdmengrandchildskinCheck=infos[0][10],
+        thirdmengrandchildskinyear=infos[0][11]
+        )
+    return p
+def insert_thirdmengrandChildHistory(user_id):
+      error=None
+      dbConn =get_db()
+      cur =dbConn.cursor()
+      p = person.thirdmengrandChildHistory(
+        accountid= int(user_id),
+        optionhistorythirdmengrandchild = int(request.form.get('optionhistorythirdmengrandchild')) if not (request.form.get('optionhistorythirdmengrandchild'))=='' else 99,
+        thirdmengrandchildbreastCheck= int(request.form.get('thirdmengrandchildbreastCheck')) if not (request.form.get('thirdmengrandchildbreastCheck'))==None  else 0,
+        thirdmengrandchildbreastyear= int(request.form.get('thirdmengrandchildbreastyear')) if not (request.form.get('thirdmengrandchildbreastyear'))==None  else 0,
+        thirdmengrandchildliverCheck =int(request.form.get('thirdmengrandchildliverCheck')) if not (request.form.get('thirdmengrandchildliverCheck'))==None  else 0,
+        thirdmengrandchildliveryear =int(request.form.get('thirdmengrandchildliveryear')) if not (request.form.get('thirdmengrandchildliveryear'))=='' else 0,
+        thirdmengrandchildgutCheck = int(request.form.get('thirdmengrandchildgutCheck')) if not (request.form.get('thirdmengrandchildgutCheck'))==None  else 0,
+        thirdmengrandchildgutyear =int(request.form.get('thirdmengrandchildgutyear')) if not (request.form.get('thirdmengrandchildgutyear'))==''  else 0,
+        thirdmengrandchildpostGrandCheck = int(request.form.get('thirdmengrandchildpostGrandCheck')) if not (request.form.get('thirdmengrandchildpostGrandCheck'))==None  else 0,
+        thirdmengrandchildpostGrandyear =int(request.form.get('thirdmengrandchildpostGrandyear')) if not (request.form.get('thirdmengrandchildpostGrandyear'))=='' else 0,
+        thirdmengrandchildskinCheck= int(request.form.get('thirdmengrandchildskinCheck')) if not (request.form.get('thirdmengrandchildskinCheck'))==None  else 0,
+        thirdmengrandchildskinyear=int(request.form.get('thirdmengrandchildskinyear')) if not (request.form.get('thirdmengrandchildskinyear'))==''  else 0,
+      )
+      cur.execute(
+       'insert into thirdmengrandchild_history(thirdmengrandchildhistoryid,optionhistorythirdmengrandchild,thirdmengrandchildbreastcheck ,thirdmengrandchildbreastyear ,thirdmengrandchildlivercheck ,thirdmengrandchildliveryear ,thirdmengrandchildgutcheck ,'
+       ' thirdmengrandchildgutyear ,thirdmengrandchildpostgrandcheck ,thirdmengrandchildpostgrandyear ,thirdmengrandchildskincheck  ,thirdmengrandchildskinyear )'
+       ' values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) ',
+       ( p.accountid,p.optionhistorythirdmengrandchild,p.thirdmengrandchildbreastCheck,p.thirdmengrandchildbreastyear,p.thirdmengrandchildliverCheck,p.thirdmengrandchildliveryear,p.thirdmengrandchildgutCheck,
+         p.thirdmengrandchildgutyear,p.thirdmengrandchildpostGrandCheck,p.thirdmengrandchildpostGrandyear,p.thirdmengrandchildskinCheck,p.thirdmengrandchildskinyear
+         
+       )
+    #   'insert into son_history(sonhistoryid) '
+    #   ' values(%s) ',
+    #  (p.accountid,)
+      )
+      if error is None:
+                dbConn.commit()
+                error = 'บันทึกประวัติหลานชาย  เรียบร้อย...' 
+                flash(error)
+                return p
+#ประวัติเหลนสาว
+def get_thirdwomendgrandChildHistoty(user_id):
+    error =None
+    dbConn = get_db()
+    cur =dbConn.cursor()
+    #select
+    cur.execute(
+      'select thirdwomangrandchildhistoryid,optionhistorythirdwomangrandchild,thirdwomangrandchildbreastcheck ,thirdwomangrandchildbreastyear ,thirdwomangrandchildlivercheck ,thirdwomangrandchildliveryear ,thirdwomangrandchildgutcheck ,'
+      ' thirdwomangrandchildgutyear ,thirdwomangrandchildpostgrandcheck ,thirdwomangrandchildpostgrandyear ,thirdwomangrandchildskincheck  ,thirdwomangrandchildskinyear ,created ,sh.id'
+      ' from thirdwomangrandchild_history sh join a_user u on sh.thirdwomangrandchildhistoryid = u.id '
+      ' where  u.id = %s order by sh.id DESC limit 1 ',(user_id,)
+    )
+    infos =cur.fetchall()
+    if not infos:
+      p = person.thirdwomendgrandChildHistory(
+        accountid = 0,
+        optionhistorythirdwomangrandchild = 99 ,  # not select
+        thirdwomangrandchildbreastCheck= 0,
+        thirdwomangrandchildbreastyear= 0,
+        thirdwomangrandchildliverCheck =0,
+        thirdwomangrandchildliveryear =0,
+        thirdwomangrandchildgutCheck =0,
+        thirdwomangrandchildgutyear =0,
+        thirdwomangrandchildpostGrandCheck =0,
+        thirdwomangrandchildpostGrandyear =0,
+        thirdwomangrandchildskinCheck=0,
+        thirdwomangrandchildskinyear=0
+        )
+    else:
+      p = person.thirdwomendgrandChildHistory(
+        accountid = infos[0][0],
+        optionhistorythirdwomangrandchild = infos[0][1] ,  # not select
+        thirdwomangrandchildbreastCheck= infos[0][2],
+        thirdwomangrandchildbreastyear= infos[0][3],
+        thirdwomangrandchildliverCheck =infos[0][4],
+        thirdwomangrandchildliveryear =infos[0][5],
+        thirdwomangrandchildgutCheck =infos[0][6],
+        thirdwomangrandchildgutyear =infos[0][7],
+        thirdwomangrandchildpostGrandCheck =infos[0][8],
+        thirdwomangrandchildpostGrandyear =infos[0][9],
+        thirdwomangrandchildskinCheck=infos[0][10],
+        thirdwomangrandchildskinyear=infos[0][11]
+        )
+    return p
+def insert_thirdwomendgrandChildHistoty(user_id):
+      error=None
+      dbConn =get_db()
+      cur =dbConn.cursor()
+      p = person.thirdwomendgrandChildHistory(
+        accountid= int(user_id),
+        optionhistorythirdwomangrandchild = int(request.form.get('optionhistorythirdwomangrandchild')) if not (request.form.get('optionhistorythirdwomangrandchild'))=='' else 99,
+        thirdwomangrandchildbreastCheck= int(request.form.get('thirdwomangrandchildbreastCheck')) if not (request.form.get('thirdwomangrandchildbreastCheck'))==None  else 0,
+        thirdwomangrandchildbreastyear= int(request.form.get('thirdwomangrandchildbreastyear')) if not (request.form.get('thirdwomangrandchildbreastyear'))==None  else 0,
+        thirdwomangrandchildliverCheck =int(request.form.get('thirdwomangrandchildliverCheck')) if not (request.form.get('thirdwomangrandchildliverCheck'))==None  else 0,
+        thirdwomangrandchildliveryear =int(request.form.get('thirdwomangrandchildliveryear')) if not (request.form.get('thirdwomangrandchildliveryear'))=='' else 0,
+        thirdwomangrandchildgutCheck = int(request.form.get('thirdwomangrandchildgutCheck')) if not (request.form.get('thirdwomangrandchildgutCheck'))==None  else 0,
+        thirdwomangrandchildgutyear =int(request.form.get('thirdwomangrandchildgutyear')) if not (request.form.get('thirdwomangrandchildgutyear'))==''  else 0,
+        thirdwomangrandchildpostGrandCheck = int(request.form.get('thirdwomangrandchildpostGrandCheck')) if not (request.form.get('thirdwomangrandchildpostGrandCheck'))==None  else 0,
+        thirdwomangrandchildpostGrandyear =int(request.form.get('thirdwomangrandchildpostGrandyear')) if not (request.form.get('thirdwomangrandchildpostGrandyear'))=='' else 0,
+        thirdwomangrandchildskinCheck= int(request.form.get('thirdwomangrandchildskinCheck')) if not (request.form.get('thirdwomangrandchildskinCheck'))==None  else 0,
+        thirdwomangrandchildskinyear=int(request.form.get('thirdwomangrandchildskinyear')) if not (request.form.get('thirdwomangrandchildskinyear'))==''  else 0,
+      )
+      cur.execute(
+       'insert into thirdwomangrandchild_history(thirdwomangrandchildhistoryid,optionhistorythirdwomangrandchild,thirdwomangrandchildbreastcheck ,thirdwomangrandchildbreastyear ,thirdwomangrandchildlivercheck ,thirdwomangrandchildliveryear ,thirdwomangrandchildgutcheck ,'
+       ' thirdwomangrandchildgutyear ,thirdwomangrandchildpostgrandcheck ,thirdwomangrandchildpostgrandyear ,thirdwomangrandchildskincheck  ,thirdwomangrandchildskinyear )'
+       ' values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) ',
+       ( p.accountid,p.optionhistorythirdwomangrandchild,p.thirdwomangrandchildbreastCheck,p.thirdwomangrandchildbreastyear,p.thirdwomangrandchildliverCheck,p.thirdwomangrandchildliveryear,p.thirdwomangrandchildgutCheck,
+         p.thirdwomangrandchildgutyear,p.thirdwomangrandchildpostGrandCheck,p.thirdwomangrandchildpostGrandyear,p.thirdwomangrandchildskinCheck,p.thirdwomangrandchildskinyear
+         
+       )
+    #   'insert into son_history(sonhistoryid) '
+    #   ' values(%s) ',
+    #  (p.accountid,)
+      )
+      if error is None:
+                dbConn.commit()
+                error = 'บันทึกประวัติหลานเหลนหญิง  เรียบร้อย...' 
                 flash(error)
                 return p
