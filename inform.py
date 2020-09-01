@@ -4,8 +4,8 @@ from flask import(
 from werkzeug.exceptions import abort
 from  chat.db import get_db
 from chat.chatclass import person
-import history_related
-
+#import history_related
+from chat import history_related
 bp =Blueprint('inform',__name__)
 
 

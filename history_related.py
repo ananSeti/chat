@@ -603,7 +603,7 @@ def insert_womangrandMomHistory(user_id):
       cur =dbConn.cursor()
       p = person.womangranMomHistory(
         accountid= int(user_id),
-        optionhistorywomangrandmother = int(request.form.get('optionhistorywomangrandmother')) if not (request.form.get('optionhistorywomangrandmother'))=='' else 99,
+        optionhistorywomangrandmother = int(request.form.get('optionhistorywomangrandmother')) if not (request.form.get('optionhistorywomangrandmother'))==None else 99,
         womangrandMombreastCheck= int(request.form.get('womangrandMombreastCheck')) if not (request.form.get('womangrandMombreastCheck'))==None  else 0,
         womangrandMombreastyear= int(request.form.get('womangrandMombreastyear')) if not (request.form.get('womangrandMombreastyear'))==None  else 0,
         womangrandMomliverCheck =int(request.form.get('womangrandMomliverCheck')) if not (request.form.get('womangrandMomliverCheck'))==None  else 0,
@@ -681,7 +681,7 @@ def insert_grandFatherHistory(user_id):
       cur =dbConn.cursor()
       p = person.grandFatherHistory(
         accountid= int(user_id),
-        optionhistorygrandfather = int(request.form.get('optionhistorygrandfather')) if not (request.form.get('optionhistorygrandfather'))=='' else 99,
+        optionhistorygrandfather = int(request.form.get('optionhistorygrandfather')) if not (request.form.get('optionhistorygrandfather'))==None else 99,
         grandFatherbreastCheck= int(request.form.get('grandFatherbreastCheck')) if not (request.form.get('grandFatherbreastCheck'))==None  else 0,
         grandFatherbreastyear= int(request.form.get('grandFatherbreastyear')) if not (request.form.get('grandFatherbreastyear'))==None  else 0,
         grandFatherliverCheck =int(request.form.get('grandFatherliverCheck')) if not (request.form.get('grandFatherliverCheck'))==None  else 0,
@@ -837,7 +837,7 @@ def insert_fatherOfMomHistory(user_id):
       cur =dbConn.cursor()
       p = person.fatherOfMomHistory(
         accountid= int(user_id),
-        optionhistoryfathermom = int(request.form.get('optionhistoryfathermom')) if not (request.form.get('optionhistoryfathermom'))=='' else 99,
+        optionhistoryfathermom = int(request.form.get('optionhistoryfathermom')) if not (request.form.get('optionhistoryfathermom'))==None else 99,
         fatherOfMombreastCheck= int(request.form.get('fatherOfMombreastCheck')) if not (request.form.get('fatherOfMombreastCheck'))==None  else 0,
         fatherOfMombreastyear= int(request.form.get('fatherOfMombreastyear')) if not (request.form.get('fatherOfMombreastyear'))==None  else 0,
         fatherOfMomliverCheck =int(request.form.get('fatherOfMomliverCheck')) if not (request.form.get('fatherOfMomliverCheck'))==None  else 0,
@@ -915,7 +915,7 @@ def insert_motherOfMomHistory(user_id):
       cur =dbConn.cursor()
       p = person.motherOfMomHistory(
         accountid= int(user_id),
-        optionhistorymothermom = int(request.form.get('optionhistorymothermom')) if not (request.form.get('optionhistorymothermom'))=='' else 99,
+        optionhistorymothermom = int(request.form.get('optionhistorymothermom')) if not (request.form.get('optionhistorymothermom'))==None else 99,
         motherOfMombreastCheck= int(request.form.get('motherOfMombreastCheck')) if not (request.form.get('motherOfMombreastCheck'))==None  else 0,
         motherOfMombreastyear= int(request.form.get('motherOfMombreastyear')) if not (request.form.get('motherOfMombreastyear'))==None  else 0,
         motherOfMomliverCheck =int(request.form.get('motherOfMomliverCheck')) if not (request.form.get('motherOfMomliverCheck'))==None  else 0,
@@ -993,7 +993,7 @@ def insert_bigUncleHistory(user_id):
       cur =dbConn.cursor()
       p = person.bigUncleHistory(
         accountid= int(user_id),
-        optionhistorybiguncle = int(request.form.get('optionhistorybiguncle')) if not (request.form.get('optionhistorybiguncle'))=='' else 99,
+        optionhistorybiguncle = int(request.form.get('optionhistorybiguncle')) if not (request.form.get('optionhistorybiguncle'))==None else 99,
         bigunclebreastCheck= int(request.form.get('bigunclebreastCheck')) if not (request.form.get('bigunclebreastCheck'))==None  else 0,
         bigunclebreastyear= int(request.form.get('bigunclebreastyear')) if not (request.form.get('bigunclebreastyear'))==None  else 0,
         biguncleliverCheck =int(request.form.get('biguncleliverCheck')) if not (request.form.get('biguncleliverCheck'))==None  else 0,
@@ -1071,7 +1071,7 @@ def insert_bigAuntHistory(user_id):
       cur =dbConn.cursor()
       p = person.bigAuntHistory(
         accountid= int(user_id),
-        optionhistorybigaunt = int(request.form.get('optionhistorybigaunt')) if not (request.form.get('optionhistorybigaunt'))=='' else 99,
+        optionhistorybigaunt = int(request.form.get('optionhistorybigaunt')) if not (request.form.get('optionhistorybigaunt'))==None else 99,
         bigauntbreastCheck= int(request.form.get('bigauntbreastCheck')) if not (request.form.get('bigauntbreastCheck'))==None  else 0,
         bigauntbreastyear= int(request.form.get('bigauntbreastyear')) if not (request.form.get('bigauntbreastyear'))==None  else 0,
         bigauntliverCheck =int(request.form.get('bigauntliverCheck')) if not (request.form.get('bigauntliverCheck'))==None  else 0,
@@ -1149,7 +1149,7 @@ def insert_smallAuntHistory(user_id):
       cur =dbConn.cursor()
       p = person.smallAuntHistory(
         accountid= int(user_id),
-        optionhistorysmallaunt = int(request.form.get('optionhistorysmallaunt')) if not (request.form.get('optionhistorysmallaunt'))=='' else 99,
+        optionhistorysmallaunt = int(request.form.get('optionhistorysmallaunt')) if not (request.form.get('optionhistorysmallaunt'))==None else 99,
         smallauntbreastCheck= int(request.form.get('smallauntbreastCheck')) if not (request.form.get('smallauntbreastCheck'))==None  else 0,
         smallauntbreastyear= int(request.form.get('smallauntbreastyear')) if not (request.form.get('smallauntbreastyear'))==None  else 0,
         smallauntliverCheck =int(request.form.get('smallauntliverCheck')) if not (request.form.get('smallauntliverCheck'))==None  else 0,
@@ -1228,7 +1228,7 @@ def insert_smallbroHistory(user_id):
       cur =dbConn.cursor()
       p = person.smallbroHistory(
         accountid= int(user_id),
-        optionhistorysmallbro = int(request.form.get('optionhistorysmallbro')) if not (request.form.get('optionhistorysmallbro'))=='' else 99,
+        optionhistorysmallbro = int(request.form.get('optionhistorysmallbro')) if not (request.form.get('optionhistorysmallbro'))==None else 99,
         smallbrobreastCheck= int(request.form.get('smallbrobreastCheck')) if not (request.form.get('smallbrobreastCheck'))==None  else 0,
         smallbrobreastyear= int(request.form.get('smallbrobreastyear')) if not (request.form.get('smallbrobreastyear'))==None  else 0,
         smallbroliverCheck =int(request.form.get('smallbroliverCheck')) if not (request.form.get('smallbroliverCheck'))==None  else 0,
@@ -1307,7 +1307,7 @@ def insert_mengrandChildHistory(user_id):
       cur =dbConn.cursor()
       p = person.mengrandChildHistory(
         accountid= int(user_id),
-        optionhistorymengrandchild = int(request.form.get('optionhistorymengrandchild')) if not (request.form.get('optionhistorymengrandchild'))=='' else 99,
+        optionhistorymengrandchild = int(request.form.get('optionhistorymengrandchild')) if not (request.form.get('optionhistorymengrandchild'))==None else 99,
         mengrandChildbreastCheck= int(request.form.get('mengrandChildbreastCheck')) if not (request.form.get('mengrandChildbreastCheck'))==None  else 0,
         mengrandChildbreastyear= int(request.form.get('mengrandChildbreastyear')) if not (request.form.get('mengrandChildbreastyear'))==None  else 0,
         mengrandChildliverCheck =int(request.form.get('mengrandChildliverCheck')) if not (request.form.get('mengrandChildliverCheck'))==None  else 0,
@@ -1386,7 +1386,7 @@ def insert_womengrandChildHistoty(user_id):
       cur =dbConn.cursor()
       p = person.womengrandChildHistoty(
         accountid= int(user_id),
-        optionhistorywomengrandchild = int(request.form.get('optionhistorywomengrandchild')) if not (request.form.get('optionhistorywomengrandchild'))=='' else 99,
+        optionhistorywomengrandchild = int(request.form.get('optionhistorywomengrandchild')) if not (request.form.get('optionhistorywomengrandchild'))==None else 99,
         womengrandchildbreastCheck= int(request.form.get('womengrandchildbreastCheck')) if not (request.form.get('womengrandchildbreastCheck'))==None  else 0,
         womengrandchildbreastyear= int(request.form.get('womengrandchildbreastyear')) if not (request.form.get('womengrandchildbreastyear'))==None  else 0,
         womengrandchildliverCheck =int(request.form.get('womengrandchildliverCheck')) if not (request.form.get('womengrandchildliverCheck'))==None  else 0,
@@ -1465,7 +1465,7 @@ def insert_thirdmengrandChildHistory(user_id):
       cur =dbConn.cursor()
       p = person.thirdmengrandChildHistory(
         accountid= int(user_id),
-        optionhistorythirdmengrandchild = int(request.form.get('optionhistorythirdmengrandchild')) if not (request.form.get('optionhistorythirdmengrandchild'))=='' else 99,
+        optionhistorythirdmengrandchild = int(request.form.get('optionhistorythirdmengrandchild')) if not (request.form.get('optionhistorythirdmengrandchild'))==None else 99,
         thirdmengrandchildbreastCheck= int(request.form.get('thirdmengrandchildbreastCheck')) if not (request.form.get('thirdmengrandchildbreastCheck'))==None  else 0,
         thirdmengrandchildbreastyear= int(request.form.get('thirdmengrandchildbreastyear')) if not (request.form.get('thirdmengrandchildbreastyear'))==None  else 0,
         thirdmengrandchildliverCheck =int(request.form.get('thirdmengrandchildliverCheck')) if not (request.form.get('thirdmengrandchildliverCheck'))==None  else 0,
@@ -1544,7 +1544,7 @@ def insert_thirdwomendgrandChildHistoty(user_id):
       cur =dbConn.cursor()
       p = person.thirdwomendgrandChildHistory(
         accountid= int(user_id),
-        optionhistorythirdwomangrandchild = int(request.form.get('optionhistorythirdwomangrandchild')) if not (request.form.get('optionhistorythirdwomangrandchild'))=='' else 99,
+        optionhistorythirdwomangrandchild = int(request.form.get('optionhistorythirdwomangrandchild')) if not (request.form.get('optionhistorythirdwomangrandchild'))==None else 99,
         thirdwomangrandchildbreastCheck= int(request.form.get('thirdwomangrandchildbreastCheck')) if not (request.form.get('thirdwomangrandchildbreastCheck'))==None  else 0,
         thirdwomangrandchildbreastyear= int(request.form.get('thirdwomangrandchildbreastyear')) if not (request.form.get('thirdwomangrandchildbreastyear'))==None  else 0,
         thirdwomangrandchildliverCheck =int(request.form.get('thirdwomangrandchildliverCheck')) if not (request.form.get('thirdwomangrandchildliverCheck'))==None  else 0,
